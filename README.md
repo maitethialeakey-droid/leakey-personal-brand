@@ -201,6 +201,6 @@ MIT License - Feel free to use and modify for your projects
 
 ---
 
-**Created with ❤️ using Manus AI**
+**Created with ❤️ *
 
 For questions or improvements, visit the GitHub repository!
