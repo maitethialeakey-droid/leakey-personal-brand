@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Risk Management in Trading: Complete position sizing guide. Learn how to calculate position size, manage drawdowns, and build long-term wealth.">
+    <meta name="keywords" content="Risk Management, Position Sizing, Money Management, Trading Risk, Stop Loss, Profit Taking">
+    <meta name="author" content="Leakey Maitethia">
+    <title>Risk Management in Trading: Position Sizing Guide | Leakey Maitethia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            line-height: 1.8;
+        }
+        header {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+        .nav-links a:hover {
+            color: #3b82f6;
+        }
+        .article-container {
+            padding: 4rem 0;
+        }
+        .article-header {
+            margin-bottom: 3rem;
+        }
+        .article-header h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #f1f5f9;
+        }
+        .article-meta {
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+        .article-content {
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+        .article-content h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.8rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #60a5fa;
+        }
+        .article-content h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #a78bfa;
+        }
+        .article-content p {
+            margin-bottom: 1.5rem;
+            color: #cbd5e1;
+        }
+        .article-content ul, .article-content ol {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .article-content li {
+            margin-bottom: 0.75rem;
+            color: #cbd5e1;
+        }
+        .highlight {
+            background: rgba(59, 130, 246, 0.1);
+            border-left: 4px solid #3b82f6;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0.5rem;
+        }
+        .highlight strong {
+            color: #60a5fa;
+        }
+        .related-articles {
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            padding: 2rem;
+            border-radius: 0.75rem;
+            margin: 2rem 0;
+        }
+        .related-articles h3 {
+            color: #60a5fa;
+            margin-bottom: 1rem;
+        }
+        .related-articles ul {
+            list-style: none;
+            margin-left: 0;
+        }
+        .related-articles li {
+            margin-bottom: 0.75rem;
+        }
+        .related-articles a {
+            color: #a78bfa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .related-articles a:hover {
+            color: #3b82f6;
+        }
+        .cta-section {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            padding: 2.5rem;
+            border-radius: 1rem;
+            border: 2px solid rgba(59, 130, 246, 0.2);
+            margin-top: 3rem;
+            text-align: center;
+        }
+        .cta-section h3 {
+            color: #60a5fa;
+            margin-bottom: 1rem;
+        }
+        .cta-section p {
+            margin-bottom: 1.5rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            color: white;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+        }
+        .btn-secondary {
+            background: transparent;
+            color: #3b82f6;
+            border: 2px solid #3b82f6;
+        }
+        .btn-secondary:hover {
+            background: rgba(59, 130, 246, 0.1);
+        }
+        footer {
+            background: rgba(15, 23, 42, 0.95);
+            border-top: 1px solid rgba(148, 163, 184, 0.1);
+            padding: 2rem 0;
+            text-align: center;
+            color: #94a3b8;
+            margin-top: 4rem;
+        }
+        .back-link {
+            color: #60a5fa;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+        .back-link:hover {
+            color: #a78bfa;
+        }
+        @media (max-width: 768px) {
+            .article-header h1 {
+                font-size: 1.8rem;
+            }
+            .container {
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">LM</a>
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#blog">Blog</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <article class="article-container">
+            <a href="index.html#blog" class="back-link">← Back to Blog</a>
+            
+            <div class="article-header">
+                <h1>Risk Management in Trading: Position Sizing Guide</h1>
+                <div class="article-meta">
+                    Posted on April 11, 2026 | 10 min read | By Leakey Maitethia
+                </div>
+            </div>
+
+            <div class="article-content">
+                <h2>Why Risk Management is Everything</h2>
+                <p>Here's a hard truth: Most traders don't fail because they can't find good setups. They fail because they don't manage risk properly.</p>
+
+                <p>A trader with a 50% win rate can be profitable with proper risk management. A trader with a 70% win rate can blow up their account with poor risk management. This is why professional traders obsess over risk management.</p>
+
+                <h2>The 1-2% Rule</h2>
+                <div class="highlight">
+                    <strong>Golden Rule:</strong> Never risk more than 1-2% of your account on a single trade.
+                </div>
+
+                <p>This means if your account is $10,000, you should risk $100-$200 per trade maximum. This rule ensures you can survive a losing streak without destroying your account.</p>
+
+                <h3>Why 1-2%?</h3>
+                <ul>
+                    <li>Allows 50 consecutive losses before blowing up (with 2% rule)</li>
+                    <li>Lets you trade emotionally stable</li>
+                    <li>Builds wealth consistently over time</li>
+                    <li>Protects against black swan events</li>
+                </ul>
+
+                <h2>Calculating Position Size</h2>
+                <h3>The Formula</h3>
+                <p><strong>Position Size = (Account Risk) / (Stop Loss Distance)</strong></p>
+
+                <h3>Example 1: Forex Trading</h3>
+                <p><strong>Given:</strong></p>
+                <ul>
+                    <li>Account: $10,000</li>
+                    <li>Risk per trade: 1% = $100</li>
+                    <li>Stop loss: 50 pips</li>
+                    <li>Pip value: $10 per pip (for standard lot)</li>
+                </ul>
+
+                <p><strong>Calculation:</strong></p>
+                <p>Position Size = $100 / (50 pips × $10/pip) = $100 / $500 = 0.2 lots</p>
+
+                <h3>Example 2: Futures Trading (ES)</h3>
+                <p><strong>Given:</strong></p>
+                <ul>
+                    <li>Account: $50,000</li>
+                    <li>Risk per trade: 2% = $1,000</li>
+                    <li>Stop loss: 50 points</li>
+                    <li>Point value: $50 per point (for ES)</li>
+                </ul>
+
+                <p><strong>Calculation:</strong></p>
+                <p>Position Size = $1,000 / (50 points × $50/point) = $1,000 / $2,500 = 0.4 contracts</p>
+
+                <h2>Stop Loss Placement</h2>
+                <p>Your stop loss distance determines your position size. Place stops at logical levels:</p>
+
+                <h3>Support/Resistance Stops</h3>
+                <p>Place stops just beyond key support or resistance levels. If price breaks through your stop, your thesis is wrong.</p>
+
+                <h3>Volatility-Based Stops</h3>
+                <p>Use ATR (Average True Range) to set stops based on market volatility:</p>
+                <ul>
+                    <li>Stop loss = Entry price - (2 × ATR)</li>
+                    <li>This adapts to market conditions</li>
+                </ul>
+
+                <h3>Time-Based Stops</h3>
+                <p>Exit if the trade hasn't moved in your favor after a certain time:</p>
+                <ul>
+                    <li>If no movement after 4 hours, exit</li>
+                    <li>If no movement after 1 day, exit</li>
+                </ul>
+
+                <h2>Profit Taking Strategy</h2>
+                <h3>Fixed Target</h3>
+                <p>Take profit at a predetermined level (1:2 or 1:3 risk/reward ratio):</p>
+
+                <ul>
+                    <li>Risk $100, target $200-$300 profit</li>
+                    <li>This ensures positive expectancy</li>
+                </ul>
+
+                <h3>Partial Profits</h3>
+                <p>Take profits in stages:</p>
+
+                <ol>
+                    <li>Take 50% profit at 1:1 risk/reward</li>
+                    <li>Move stop to breakeven</li>
+                    <li>Let remaining 50% run to 1:2 or 1:3</li>
+                </ol>
+
+                <h3>Trailing Stops</h3>
+                <p>Move your stop loss up as price moves in your favor:</p>
+
+                <ul>
+                    <li>Lock in profits while letting winners run</li>
+                    <li>Use ATR or percentage-based trailing stops</li>
+                </ul>
+
+                <h2>Managing Drawdowns</h2>
+                <h3>What is a Drawdown?</h3>
+                <p>A drawdown is the peak-to-trough decline in your account. Even profitable traders experience drawdowns.</p>
+
+                <h3>Expected Drawdown</h3>
+                <p>With proper position sizing, you should expect:</p>
+
+                <ul>
+                    <li>50% win rate: 15-20% drawdown</li>
+                    <li>60% win rate: 10-15% drawdown</li>
+                    <li>70% win rate: 5-10% drawdown</li>
+                </ul>
+
+                <h3>Surviving Drawdowns</h3>
+                <ol>
+                    <li>Don't increase position size during drawdowns</li>
+                    <li>Don't revenge trade (trying to make back losses quickly)</li>
+                    <li>Stick to your system</li>
+                    <li>Remember: Drawdowns are temporary</li>
+                </ol>
+
+                <h2>The Risk/Reward Ratio</h2>
+                <div class="highlight">
+                    <strong>Rule:</strong> Always aim for at least 1:1 risk/reward ratio. Better traders target 1:2 or 1:3.
+                </div>
+
+                <h3>Why Risk/Reward Matters</h3>
+                <p>With 1:2 risk/reward, you only need 33% win rate to be profitable:</p>
+
+                <ul>
+                    <li>10 trades: 3 wins × $200 = $600</li>
+                    <li>10 trades: 7 losses × $100 = -$700</li>
+                    <li>Net: -$100 (break even with fees)</li>
+                </ul>
+
+                <p>With 1:3 risk/reward, you only need 25% win rate:</p>
+
+                <ul>
+                    <li>10 trades: 2.5 wins × $300 = $750</li>
+                    <li>10 trades: 7.5 losses × $100 = -$750</li>
+                    <li>Net: $0 (break even)</li>
+                </ul>
+
+                <h2>Common Risk Management Mistakes</h2>
+                <ol>
+                    <li><strong>Risking too much:</strong> Stick to 1-2% rule</li>
+                    <li><strong>No stop losses:</strong> Always use stops</li>
+                    <li><strong>Moving stops against you:</strong> Never do this</li>
+                    <li><strong>Revenge trading:</strong> Don't try to make back losses</li>
+                    <li><strong>Ignoring drawdowns:</strong> Expect and plan for them</li>
+                    <li><strong>Overleveraging:</strong> Use proper position sizing</li>
+                </ol>
+
+                <h2>Building Wealth Through Compounding</h2>
+                <p>With proper risk management, your account grows through compounding:</p>
+
+                <ul>
+                    <li>Month 1: $10,000 → $10,500 (5% gain)</li>
+                    <li>Month 2: $10,500 → $11,025 (5% gain)</li>
+                    <li>Month 3: $11,025 → $11,576 (5% gain)</li>
+                </ul>
+
+                <p>After 1 year: $10,000 → $17,959 (80% gain)</p>
+                <p>After 5 years: $10,000 → $127,628 (1,176% gain)</p>
+
+                <p>This is the power of consistent, risk-managed trading.</p>
+
+                <h2>Conclusion</h2>
+                <p>Risk management is not exciting, but it's essential. The traders who survive and thrive are the ones who manage risk religiously. Follow the 1-2% rule, use proper position sizing, and let compounding do the work.</p>
+
+                <div class="related-articles">
+                    <h3>Related Articles</h3>
+                    <ul>
+                        <li><a href="smt-divergence.html">SMT Divergence Explained: ES vs NQ Example</a></li>
+                        <li><a href="fvg-strategy.html">Fair Value Gap (FVG) Strategy: Beginner to Advanced</a></li>
+                        <li><a href="market-structure-shifts.html">Market Structure Shifts: How to Identify Key Levels</a></li>
+                    </ul>
+                </div>
+
+                <div class="cta-section">
+                    <h3>Need Help Building a Trading System?</h3>
+                    <p>I develop complete trading systems with built-in risk management, position sizing, and profit-taking rules. Automate your trading with proper risk controls.</p>
+                    <p><strong>Free consultation available for limited time.</strong></p>
+                    <a href="index.html#contact" class="btn btn-primary">Schedule Free Consultation</a>
+                    <a href="https://t.me/LeakeyLK2" target="_blank" class="btn btn-secondary">Message on Telegram</a>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Leakey Maitethia. All rights reserved.</p>
+            <p style="margin-top: 1rem; font-size: 0.875rem;">
+                <a href="index.html" style="color: #60a5fa; text-decoration: none;">Back to Home</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
