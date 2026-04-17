@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="How to Build a TradingView Indicator: Step-by-step Pine Script guide for beginners. Learn to code custom indicators from scratch with real examples.">
+    <meta name="keywords" content="TradingView Indicator, Pine Script, Trading Bot, Automated Trading, Technical Analysis">
+    <meta name="author" content="Leakey Maitethia">
+    <title>How to Build a TradingView Indicator: Step-by-Step Guide | Leakey Maitethia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            line-height: 1.8;
+        }
+        header {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+        .nav-links a:hover {
+            color: #3b82f6;
+        }
+        .article-container {
+            padding: 4rem 0;
+        }
+        .article-header {
+            margin-bottom: 3rem;
+        }
+        .article-header h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #f1f5f9;
+        }
+        .article-meta {
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+        .article-content {
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+        .article-content h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.8rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #60a5fa;
+        }
+        .article-content h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #a78bfa;
+        }
+        .article-content p {
+            margin-bottom: 1.5rem;
+            color: #cbd5e1;
+        }
+        .article-content ul, .article-content ol {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .article-content li {
+            margin-bottom: 0.75rem;
+            color: #cbd5e1;
+        }
+        .code-block {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #60a5fa;
+            line-height: 1.6;
+        }
+        .highlight {
+            background: rgba(59, 130, 246, 0.1);
+            border-left: 4px solid #3b82f6;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0.5rem;
+        }
+        .highlight strong {
+            color: #60a5fa;
+        }
+        .cta-section {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            padding: 2.5rem;
+            border-radius: 1rem;
+            border: 2px solid rgba(59, 130, 246, 0.2);
+            margin-top: 3rem;
+            text-align: center;
+        }
+        .cta-section h3 {
+            color: #60a5fa;
+            margin-bottom: 1rem;
+        }
+        .cta-section p {
+            margin-bottom: 1.5rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            color: white;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+        }
+        .btn-secondary {
+            background: transparent;
+            color: #3b82f6;
+            border: 2px solid #3b82f6;
+        }
+        .btn-secondary:hover {
+            background: rgba(59, 130, 246, 0.1);
+        }
+        footer {
+            background: rgba(15, 23, 42, 0.95);
+            border-top: 1px solid rgba(148, 163, 184, 0.1);
+            padding: 2rem 0;
+            text-align: center;
+            color: #94a3b8;
+            margin-top: 4rem;
+        }
+        .back-link {
+            color: #60a5fa;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+        .back-link:hover {
+            color: #a78bfa;
+        }
+        @media (max-width: 768px) {
+            .article-header h1 {
+                font-size: 1.8rem;
+            }
+            .container {
+                padding: 0 1rem;
+            }
+            .code-block {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">LM</a>
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#blog">Blog</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <article class="article-container">
+            <a href="index.html#blog" class="back-link">← Back to Blog</a>
+            
+            <div class="article-header">
+                <h1>How to Build a TradingView Indicator: Step-by-Step Pine Script Guide</h1>
+                <div class="article-meta">
+                    Posted on April 13, 2026 | 13 min read | By Leakey Maitethia
+                </div>
+            </div>
+
+            <div class="article-content">
+                <h2>Introduction: Why Build Custom Indicators?</h2>
+                <p>TradingView's built-in indicators are useful, but they're generic. To gain a real edge in trading, you need custom indicators tailored to your specific strategy. This is where Pine Script comes in.</p>
+
+                <p>Pine Script is TradingView's programming language that lets you create custom indicators, strategies, and alerts. In this guide, you'll learn to build your first indicator from scratch.</p>
+
+                <h2>What is Pine Script?</h2>
+                <p>Pine Script is a lightweight programming language designed specifically for TradingView. It's beginner-friendly yet powerful enough to create complex trading systems.</p>
+
+                <h3>Key Advantages</h3>
+                <ul>
+                    <li>Easy to learn (even for non-programmers)</li>
+                    <li>Direct access to price data and technical indicators</li>
+                    <li>Can create alerts and automate trading signals</li>
+                    <li>Share indicators with the TradingView community</li>
+                    <li>Free to use on TradingView</li>
+                </ul>
+
+                <h2>Getting Started: The Pine Script Editor</h2>
+                <h3>Step 1: Open the Pine Script Editor</h3>
+                <ol>
+                    <li>Go to TradingView.com and log in</li>
+                    <li>Open any chart</li>
+                    <li>Click "Pine Script Editor" (bottom left)</li>
+                    <li>Click "New" to create a new script</li>
+                </ol>
+
+                <h3>Step 2: Understand the Basic Structure</h3>
+                <p>Every Pine Script indicator has this basic structure:</p>
+
+                <div class="code-block">
+//@version=5<br>
+indicator("My First Indicator", overlay=true)<br>
+<br>
+// Your code here<br>
+<br>
+plot(close)
+                </div>
+
+                <p><strong>Breakdown:</strong></p>
+                <ul>
+                    <li><code>//@version=5</code> - Specifies Pine Script version</li>
+                    <li><code>indicator()</code> - Declares this is an indicator</li>
+                    <li><code>overlay=true</code> - Displays on the price chart</li>
+                    <li><code>plot()</code> - Draws a line on the chart</li>
+                </ul>
+
+                <h2>Building Your First Indicator: Simple Moving Average</h2>
+                <h3>Step 1: Create the Basic Structure</h3>
+
+                <div class="code-block">
+//@version=5<br>
+indicator("Simple Moving Average", overlay=true)<br>
+<br>
+// Define the period<br>
+period = input(20, title="SMA Period")<br>
+<br>
+// Calculate SMA<br>
+sma = ta.sma(close, period)<br>
+<br>
+// Plot the SMA<br>
+plot(sma, color=color.blue, linewidth=2)
+                </div>
+
+                <h3>Step 2: Add User Input</h3>
+                <p>The <code>input()</code> function lets users customize your indicator:</p>
+
+                <div class="code-block">
+period = input(20, title="SMA Period")<br>
+color_input = input(color.blue, title="Line Color")
+                </div>
+
+                <h3>Step 3: Test Your Indicator</h3>
+                <ol>
+                    <li>Click "Add to Chart"</li>
+                    <li>Your SMA should appear on the chart</li>
+                    <li>Right-click → Settings to adjust the period</li>
+                </ol>
+
+                <h2>Advanced: Building an FVG Detector</h2>
+                <p>Now let's build something more useful: an indicator that detects Fair Value Gaps.</p>
+
+                <div class="code-block">
+//@version=5<br>
+indicator("FVG Detector", overlay=true)<br>
+<br>
+// Check for bullish FVG<br>
+bullish_fvg = high[2] < low[0]<br>
+<br>
+// Check for bearish FVG<br>
+bearish_fvg = low[2] > high[0]<br>
+<br>
+// Plot signals<br>
+plotshape(bullish_fvg, style=shape.triangleup, color=color.green)<br>
+plotshape(bearish_fvg, style=shape.triangledown, color=color.red)
+                </div>
+
+                <h3>How It Works</h3>
+                <ul>
+                    <li><code>high[2]</code> - High price 2 candles ago</li>
+                    <li><code>low[0]</code> - Current candle's low</li>
+                    <li><code>bullish_fvg</code> - True when gap detected</li>
+                    <li><code>plotshape()</code> - Draws a triangle on the chart</li>
+                </ul>
+
+                <h2>Creating Alerts</h2>
+                <p>Alerts notify you when your indicator triggers a signal:</p>
+
+                <div class="code-block">
+alertcondition(bullish_fvg, title="Bullish FVG", message="Bullish FVG detected!")
+                </div>
+
+                <p>Now you can set up alerts in TradingView to notify you via email, SMS, or push notification.</p>
+
+                <h2>Common Pine Script Functions</h2>
+
+                <h3>Price Data Functions</h3>
+                <ul>
+                    <li><code>close</code> - Current candle's closing price</li>
+                    <li><code>open</code> - Opening price</li>
+                    <li><code>high</code> - Highest price</li>
+                    <li><code>low</code> - Lowest price</li>
+                    <li><code>volume</code> - Trading volume</li>
+                </ul>
+
+                <h3>Technical Indicator Functions</h3>
+                <ul>
+                    <li><code>ta.sma()</code> - Simple Moving Average</li>
+                    <li><code>ta.ema()</code> - Exponential Moving Average</li>
+                    <li><code>ta.rsi()</code> - Relative Strength Index</li>
+                    <li><code>ta.macd()</code> - MACD</li>
+                    <li><code>ta.stoch()</code> - Stochastic</li>
+                </ul>
+
+                <h3>Plotting Functions</h3>
+                <ul>
+                    <li><code>plot()</code> - Draw a line</li>
+                    <li><code>plotshape()</code> - Draw shapes (triangles, circles, etc.)</li>
+                    <li><code>plotbar()</code> - Draw bars</li>
+                    <li><code>fill()</code> - Fill between two plots</li>
+                </ul>
+
+                <h2>Debugging Your Indicator</h2>
+                <h3>Common Errors</h3>
+                <ol>
+                    <li><strong>Syntax Error:</strong> Check for missing parentheses or semicolons</li>
+                    <li><strong>Undefined Variable:</strong> Make sure you defined all variables</li>
+                    <li><strong>Type Mismatch:</strong> Ensure variables are the correct type (number, string, bool)</li>
+                </ol>
+
+                <h3>Using Print Statements</h3>
+                <p>Debug your code with print statements:</p>
+
+                <div class="code-block">
+sma = ta.sma(close, 20)<br>
+print("SMA: " + str(sma))
+                </div>
+
+                <h2>Publishing Your Indicator</h2>
+                <p>Once your indicator is working, you can publish it to the TradingView community:</p>
+
+                <ol>
+                    <li>Click "Publish Script" in the Pine Script editor</li>
+                    <li>Choose "Publish as Public Library"</li>
+                    <li>Add description and category</li>
+                    <li>Click "Publish"</li>
+                </ol>
+
+                <p>Your indicator is now available for other traders to use!</p>
+
+                <h2>Best Practices for Pine Script</h2>
+                <div class="highlight">
+                    <strong>Rule 1:</strong> Always use the latest Pine Script version (@version=5 or higher)
+                </div>
+
+                <ul>
+                    <li>Use descriptive variable names</li>
+                    <li>Add comments to explain your logic</li>
+                    <li>Test on multiple timeframes</li>
+                    <li>Backtest your strategy before trading</li>
+                    <li>Use proper risk management with alerts</li>
+                </ul>
+
+                <h2>Next Steps: Building Trading Systems</h2>
+                <p>Once you master indicators, you can create full trading systems with entry and exit signals. This allows you to backtest your strategy and even automate trades.</p>
+
+                <p>The possibilities are endless: SMT divergence detectors, FVG finders, market structure analyzers, and more.</p>
+
+                <h2>Conclusion</h2>
+                <p>Pine Script is a powerful tool that separates professional traders from amateurs. By learning to code custom indicators, you gain the ability to automate your analysis and execute your strategy with precision.</p>
+
+                <p>Start simple, practice consistently, and gradually build more complex indicators. Before you know it, you'll have a complete trading system tailored to your strategy.</p>
+
+                <div class="cta-section">
+                    <h3>Need Custom Pine Script Development?</h3>
+                    <p>I develop professional-grade TradingView indicators and trading systems. Whether you need an SMT divergence detector, FVG analyzer, or complete automated trading system, I can build it for you.</p>
+                    <a href="index.html#contact" class="btn btn-primary">Request Custom Indicator</a>
+                    <a href="https://t.me/LeakeyLK2" target="_blank" class="btn btn-secondary">Discuss Your Idea</a>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Leakey Maitethia. All rights reserved.</p>
+            <p style="margin-top: 1rem; font-size: 0.875rem;">
+                <a href="index.html" style="color: #60a5fa; text-decoration: none;">Back to Home</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
