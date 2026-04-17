@@ -10,6 +10,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <!-- Note: Replace G-XXXXXXXXXX with your actual Google Analytics ID from Google Analytics -->
     <style>
         * {
             margin: 0;
@@ -357,6 +366,7 @@
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
                     <li><a href="#blog">Blog</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -461,6 +471,34 @@
                         <div class="blog-meta">Posted on April 10, 2026</div>
                     </div>
                 </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">Services</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>🎯 TradingView Indicator Development</h3>
+                    <p>Custom Pine Script indicators tailored to your trading strategy. From simple moving averages to complex multi-timeframe analysis tools. I create non-repainting, production-ready indicators that give you an edge.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📊 ICT Strategy Systems</h3>
+                    <p>Complete trading systems based on Inner Circle Trading methodology. Including market structure analysis, FVG detection, SMT divergence identification, and automated entry/exit rules. Fully documented and backtested.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🤖 Python Trading Automation</h3>
+                    <p>Build automated trading bots that execute your strategies 24/7. Integration with Interactive Brokers, TradingView webhooks, and real-time market data. Risk management, position sizing, and performance tracking included.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <p style="font-size: 1.1rem; color: #cbd5e1; margin-bottom: 1.5rem;">Ready to take your trading to the next level?</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary">Start Your Project</a>
+                    <a href="https://t.me/LeakeyLK2" target="_blank" class="btn btn-secondary">Message on Telegram</a>
+                </div>
             </div>
         </div>
     </section>
