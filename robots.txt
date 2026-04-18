@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://maitethialeakey-droid.github.io/leakey-personal-brand/sitemap.xml
