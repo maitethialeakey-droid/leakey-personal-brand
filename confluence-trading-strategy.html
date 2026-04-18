@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Master the Power of Confluence: Learn how to combine ICT Market Structure, SMT Divergence, and Machine Learning signals for high-probability trading. Complete guide for advanced traders.">
+    <meta name="keywords" content="Trading Confluence, ICT Strategy, SMT Divergence, Machine Learning Trading, Algorithmic Trading, Price Action">
+    <meta name="author" content="Leakey Maitethia">
+    <title>The Power of Confluence: ICT, SMT, and ML Strategy | Leakey Maitethia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            line-height: 1.8;
+        }
+        header {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+        .nav-links a:hover {
+            color: #3b82f6;
+        }
+        .article-container {
+            padding: 4rem 0;
+        }
+        .article-header {
+            margin-bottom: 3rem;
+        }
+        .article-header h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #f1f5f9;
+        }
+        .article-meta {
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+        .article-content {
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+        .article-content h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.8rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #60a5fa;
+        }
+        .article-content h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #a78bfa;
+        }
+        .article-content p {
+            margin-bottom: 1.5rem;
+            color: #cbd5e1;
+        }
+        .article-content ul, .article-content ol {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .article-content li {
+            margin-bottom: 0.75rem;
+            color: #cbd5e1;
+        }
+        .highlight {
+            background: rgba(59, 130, 246, 0.1);
+            border-left: 4px solid #3b82f6;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0.5rem;
+        }
+        .highlight strong {
+            color: #60a5fa;
+        }
+        .cta-section {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            padding: 2.5rem;
+            border-radius: 1rem;
+            border: 2px solid rgba(59, 130, 246, 0.2);
+            margin-top: 3rem;
+            text-align: center;
+        }
+        .cta-section h3 {
+            color: #60a5fa;
+            margin-bottom: 1rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            color: white;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+        }
+        .btn-secondary {
+            background: transparent;
+            color: #3b82f6;
+            border: 2px solid #3b82f6;
+        }
+        footer {
+            background: rgba(15, 23, 42, 0.95);
+            border-top: 1px solid rgba(148, 163, 184, 0.1);
+            padding: 2rem 0;
+            text-align: center;
+            color: #94a3b8;
+            margin-top: 4rem;
+        }
+        .back-link {
+            color: #60a5fa;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+        @media (max-width: 768px) {
+            .article-header h1 { font-size: 1.8rem; }
+            .container { padding: 0 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">LM</a>
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#blog">Blog</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <article class="article-container">
+            <a href="index.html#blog" class="back-link">← Back to Blog</a>
+            
+            <div class="article-header">
+                <h1>The Power of Confluence: Combining ICT, SMT, and ML for High-Probability Trading</h1>
+                <div class="article-meta">
+                    Posted on April 18, 2026 | 15 min read | By Leakey Maitethia
+                </div>
+            </div>
+
+            <div class="article-content">
+                <h2>Introduction: Why Confluence is King</h2>
+                <p>In the world of professional trading, relying on a single indicator or concept is often a recipe for disaster. The most successful institutional traders look for "confluence"—the overlapping of multiple independent signals that all point to the same market direction. When ICT market structure, SMT divergence, and Machine Learning models align, the probability of a successful trade increases exponentially.</p>
+                
+                <p>This guide will explore how to integrate these three powerful domains into a single, cohesive trading framework.</p>
+
+                <h2>Layer 1: ICT Market Structure (The Foundation)</h2>
+                <p>Before looking at advanced signals, you must understand the narrative. <a href="market-structure-shifts.html" style="color: #60a5fa;">Market Structure Shifts</a> are the primary indicator of institutional intent. We look for a displacement that breaks a swing high or low, signaling that smart money has stepped in.</p>
+                
+                <p>Once a shift is identified, we look for a return to a <a href="fvg-strategy.html" style="color: #60a5fa;">Fair Value Gap (FVG)</a>. This provides our primary area of interest (POI).</p>
+
+                <h2>Layer 2: SMT Divergence (The Confirmation)</h2>
+                <p>While market structure gives us direction, <a href="smt-divergence.html" style="color: #60a5fa;">SMT Divergence</a> provides the ultimate confirmation. If we are looking for a long setup in the NQ (Nasdaq), we want to see the ES (S&P 500) making a lower low while the NQ fails to do so. This divergence at a key liquidity level is the "footprint" of institutional accumulation.</p>
+
+                <h2>Layer 3: Machine Learning (The Edge)</h2>
+                <p>The final layer is quantitative. Using <a href="tradingview-indicator.html" style="color: #60a5fa;">custom TradingView indicators</a> or Python-based ML models, we can calculate the probability of the current setup based on historical data. Our models analyze factors like:</p>
+                <ul>
+                    <li>Time of day (Killzones)</li>
+                    <li>Historical win rate of similar SMT setups</li>
+                    <li>Volatility regimes</li>
+                </ul>
+                <p>If our ML model gives a >65% probability signal that aligns with our ICT and SMT analysis, we have a "Triple Confluence" setup.</p>
+
+                <div class="highlight">
+                    <strong>Triple Confluence Rule:</strong> Only take trades where the Market Structure has shifted, SMT is present at the entry, and the ML model confirms the directional bias.
+                </div>
+
+                <h2>Risk Management: The Safety Net</h2>
+                <p>Even with triple confluence, <a href="risk-management.html" style="color: #60a5fa;">Risk Management</a> remains the most important factor. No signal is 100% certain. We always use a fixed risk per trade (typically 1%) and place our stops beyond the displacement candle or the SMT low.</p>
+
+                <h2>Conclusion</h2>
+                <p>Combining ICT, SMT, and ML isn't about making trading more complex—it's about making it more precise. By filtering out low-probability setups and focusing only on areas of high confluence, you can achieve the consistency required for professional-level trading.</p>
+
+                <h2>Related Articles</h2>
+                <ul>
+                    <li><a href="smt-divergence.html" style="color: #60a5fa;">SMT Divergence Explained</a></li>
+                    <li><a href="fvg-strategy.html" style="color: #60a5fa;">Fair Value Gap Strategy</a></li>
+                    <li><a href="market-structure-shifts.html" style="color: #60a5fa;">Market Structure Shifts</a></li>
+                    <li><a href="ict-trading-basics.html" style="color: #60a5fa;">ICT Trading Basics</a></li>
+                    <li><a href="liquidity-concepts.html" style="color: #60a5fa;">Liquidity Concepts</a></li>
+                </ul>
+
+                <div class="cta-section">
+                    <h3>Want to Automate This Strategy?</h3>
+                    <p>I build custom trading bots that combine these exact concepts. Let's build your automated edge.</p>
+                    <a href="index.html#contact" class="btn btn-primary">Start Your Project</a>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Leakey Maitethia. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
