@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ICT Trading Basics: Complete Guide to Inner Circle Trading methodology. Learn market structure, liquidity, and smart money concepts for professional trading.">
+    <meta name="keywords" content="ICT Trading, Inner Circle Trading, Market Structure, Smart Money, Trading Basics, Price Action">
+    <meta name="author" content="Leakey Maitethia">
+    <title>ICT Trading Basics: Complete Guide to Inner Circle Trading | Leakey Maitethia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            line-height: 1.8;
+        }
+        header {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+        .nav-links a:hover {
+            color: #3b82f6;
+        }
+        .article-container {
+            padding: 4rem 0;
+        }
+        .article-header {
+            margin-bottom: 3rem;
+        }
+        .article-header h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #f1f5f9;
+        }
+        .article-meta {
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+        .article-content {
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+        .article-content h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.8rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #60a5fa;
+        }
+        .article-content h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #a78bfa;
+        }
+        .article-content p {
+            margin-bottom: 1.5rem;
+            color: #cbd5e1;
+        }
+        .article-content ul, .article-content ol {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .article-content li {
+            margin-bottom: 0.75rem;
+            color: #cbd5e1;
+        }
+        .highlight {
+            background: rgba(59, 130, 246, 0.1);
+            border-left: 4px solid #3b82f6;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0.5rem;
+        }
+        .highlight strong {
+            color: #60a5fa;
+        }
+        .cta-section {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            padding: 2.5rem;
+            border-radius: 1rem;
+            border: 2px solid rgba(59, 130, 246, 0.2);
+            margin-top: 3rem;
+            text-align: center;
+        }
+        .cta-section h3 {
+            color: #60a5fa;
+            margin-bottom: 1rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            color: white;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+        }
+        .btn-secondary {
+            background: transparent;
+            color: #3b82f6;
+            border: 2px solid #3b82f6;
+        }
+        footer {
+            background: rgba(15, 23, 42, 0.95);
+            border-top: 1px solid rgba(148, 163, 184, 0.1);
+            padding: 2rem 0;
+            text-align: center;
+            color: #94a3b8;
+            margin-top: 4rem;
+        }
+        .footer-links {
+            margin-top: 1rem;
+            font-size: 0.875rem;
+        }
+        .footer-links a {
+            color: #60a5fa;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        .footer-links a:hover {
+            color: #a78bfa;
+        }
+        .back-link {
+            color: #60a5fa;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+        @media (max-width: 768px) {
+            .article-header h1 { font-size: 1.8rem; }
+            .container { padding: 0 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">LM</a>
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#blog">Blog</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <article class="article-container">
+            <a href="index.html#blog" class="back-link">← Back to Blog</a>
+            
+            <div class="article-header">
+                <h1>ICT Trading Basics: Complete Guide to Inner Circle Trading</h1>
+                <div class="article-meta">
+                    Posted on April 16, 2026 | 13 min read | By Leakey Maitethia
+                </div>
+            </div>
+
+            <div class="article-content">
+                <h2>Introduction: What is Inner Circle Trading (ICT)?</h2>
+                <p>Inner Circle Trading (ICT) is a price action-based trading methodology that focuses on understanding how institutional traders (smart money) move the market. Unlike retail traders who rely on indicators, ICT traders study market structure, liquidity pools, and price patterns to identify high-probability trading setups.</p>
+                
+                <p>This comprehensive guide will teach you the fundamentals of ICT methodology, from market structure analysis to identifying smart money movements.</p>
+
+                <h2>Core Principles of ICT Trading</h2>
+                <h3>1. Market Structure is Everything</h3>
+                <p>Market structure refers to the pattern of higher highs and higher lows (uptrend) or lower highs and lower lows (downtrend). Professional traders use market structure to identify the direction of institutional money flow.</p>
+
+                <h3>2. Smart Money Hunts Liquidity</h3>
+                <p>Institutional traders deliberately move price to collect liquidity (stop losses) at obvious technical levels. Understanding where retail traders place their stops is crucial to predicting smart money movements.</p>
+
+                <h3>3. Fair Value Gaps Represent Imbalance</h3>
+                <p>When price gaps over a level without trading there, that area is left "unfair." The market naturally returns to fill these gaps, creating high-probability trading opportunities.</p>
+
+                <h2>The Three Pillars of ICT</h2>
+                <h3>Pillar 1: Market Structure Shifts</h3>
+                <p>A market structure shift (MSS) occurs when price breaks a previous swing high or low, signaling a potential trend change. These breaks are where institutional traders often enter positions.</p>
+
+                <h3>Pillar 2: Liquidity Pools</h3>
+                <p>Liquidity pools form where retail traders place stop losses. Smart money targets these levels to trigger stops and collect liquidity before reversing price in the intended direction.</p>
+
+                <h3>Pillar 3: Fair Value Gaps</h3>
+                <p>Fair Value Gaps (FVGs) are price imbalances created when the market gaps over a level. These gaps are high-probability targets for price to return and fill.</p>
+
+                <h2>Key ICT Concepts</h2>
+                <h3>Swing Highs and Lows</h3>
+                <p>A swing high requires at least one lower high on each side. A swing low requires at least one higher low on each side. These are the foundation of market structure analysis.</p>
+
+                <h3>Break of Structure (BOS)</h3>
+                <p>A break of structure occurs when price breaks below a swing low (bearish) or above a swing high (bullish). This signals a potential trend change and is a key entry signal for ICT traders.</p>
+
+                <h3>Mitigated Liquidity</h3>
+                <p>When price fills a liquidity pool (touches a level where retail traders placed stops), that liquidity is "mitigated." This often signals a reversal in price direction.</p>
+
+                <h2>The ICT Trading Process</h2>
+                <ol>
+                    <li><strong>Identify Market Structure:</strong> Determine if the market is in an uptrend, downtrend, or consolidation</li>
+                    <li><strong>Find Swing Highs/Lows:</strong> Mark clear swing points on your chart</li>
+                    <li><strong>Identify Liquidity Pools:</strong> Look for levels where retail traders likely placed stops</li>
+                    <li><strong>Spot Fair Value Gaps:</strong> Find gaps left by rapid price movement</li>
+                    <li><strong>Wait for Confirmation:</strong> Use volume and price action to confirm setups</li>
+                    <li><strong>Enter with Risk Management:</strong> Place stops at logical levels and use proper position sizing</li>
+                </ol>
+
+                <div class="highlight">
+                    <strong>Golden Rule of ICT:</strong> Only trade at key levels with confluence. Confluence means multiple signals (market structure, liquidity, FVG) align at the same area.
+                </div>
+
+                <h2>Common ICT Trading Setups</h2>
+                <h3>Setup 1: Market Structure Break with FVG</h3>
+                <p>Price breaks a swing high/low AND there's a Fair Value Gap nearby. This is one of the highest probability setups in ICT trading.</p>
+
+                <h3>Setup 2: Liquidity Grab and Reversal</h3>
+                <p>Price moves to collect liquidity at a stop loss level, then reverses sharply. This is where retail traders get stopped out and smart money profits.</p>
+
+                <h3>Setup 3: Multiple Timeframe Confirmation</h3>
+                <p>A setup on a lower timeframe is confirmed by market structure on a higher timeframe. This increases the probability of success.</p>
+
+                <h2>Risk Management in ICT Trading</h2>
+                <p>Even with perfect ICT analysis, risk management is essential. Follow these rules:</p>
+                <ul>
+                    <li>Never risk more than 1-2% of your account per trade</li>
+                    <li>Place stops just beyond key levels (not at obvious round numbers)</li>
+                    <li>Use proper position sizing based on your stop loss distance</li>
+                    <li>Always use stops—no exceptions</li>
+                    <li>Take profits at predetermined levels or at the next liquidity pool</li>
+                </ul>
+
+                <h2>Common ICT Trading Mistakes</h2>
+                <ol>
+                    <li><strong>Trading every setup:</strong> Wait for high-confluence setups only</li>
+                    <li><strong>Ignoring market structure:</strong> Always confirm with market structure</li>
+                    <li><strong>Poor stop placement:</strong> Place stops at logical levels, not at obvious round numbers</li>
+                    <li><strong>Overleveraging:</strong> Use proper position sizing</li>
+                    <li><strong>Not using stops:</strong> This is how traders blow up accounts</li>
+                </ol>
+
+                <h2>Conclusion</h2>
+                <p>ICT trading is about understanding how institutional traders move the market. By studying market structure, identifying liquidity pools, and trading Fair Value Gaps with proper risk management, you can build a profitable trading system.</p>
+
+                <p>Remember: The best ICT traders aren't the ones who trade every setup—they're the ones who execute the best setups with discipline and proper risk management.</p>
+
+                <h2>Related Articles</h2>
+                <ul>
+                    <li><a href="market-structure-shifts.html" style="color: #60a5fa;">Market Structure Shifts: How to Identify Key Levels</a> - Master the foundation of ICT analysis</li>
+                    <li><a href="fvg-strategy.html" style="color: #60a5fa;">Fair Value Gap Strategy: Complete Trading Guide</a> - Learn to trade FVGs for high probability setups</li>
+                    <li><a href="liquidity-concepts.html" style="color: #60a5fa;">Liquidity Concepts: How Smart Money Hunts Stops</a> - Understand institutional price manipulation</li>
+                    <li><a href="smt-divergence.html" style="color: #60a5fa;">SMT Divergence Explained: ES vs NQ Example</a> - Confirm ICT setups with divergence analysis</li>
+                    <li><a href="risk-management.html" style="color: #60a5fa;">Risk Management in Trading: Position Sizing Guide</a> - Protect your capital with proper risk management</li>
+                </ul>
+
+                <div class="cta-section">
+                    <h3>Ready to Master ICT Trading?</h3>
+                    <p>I build custom TradingView indicators and trading systems based on ICT methodology. Let's automate your trading strategy.</p>
+                    <a href="index.html#contact" class="btn btn-primary">Start Your Project</a>
+                    <a href="https://t.me/LeakeyLK2" class="btn btn-secondary" target="_blank">Message on Telegram</a>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Leakey Maitethia. All rights reserved. | ML Engineer & Trading Systems Architect</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#blog">Blog</a>
+                <a href="index.html#contact">Contact</a>
+                <a href="https://github.com/maitethialeakey-droid/leakey-personal-brand" target="_blank">GitHub</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Disclaimer</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fair Value Gap Strategy: Complete Trading Guide. Learn how to identify and trade FVGs for high-probability setups using price action analysis.">
+    <meta name="keywords" content="Fair Value Gap, FVG, Price Action, Trading Strategy, Market Gaps, ICT Trading">
+    <meta name="author" content="Leakey Maitethia">
+    <title>Fair Value Gap Strategy: Complete Trading Guide | Leakey Maitethia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            line-height: 1.8;
+        }
+        header {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+        .nav-links a:hover {
+            color: #3b82f6;
+        }
+        .article-container {
+            padding: 4rem 0;
+        }
+        .article-header {
+            margin-bottom: 3rem;
+        }
+        .article-header h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #f1f5f9;
+        }
+        .article-meta {
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+        .article-content {
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+        .article-content h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.8rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #60a5fa;
+        }
+        .article-content h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #a78bfa;
+        }
+        .article-content p {
+            margin-bottom: 1.5rem;
+            color: #cbd5e1;
+        }
+        .article-content ul, .article-content ol {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .article-content li {
+            margin-bottom: 0.75rem;
+            color: #cbd5e1;
+        }
+        .highlight {
+            background: rgba(59, 130, 246, 0.1);
+            border-left: 4px solid #3b82f6;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0.5rem;
+        }
+        .highlight strong {
+            color: #60a5fa;
+        }
+        .cta-section {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            padding: 2.5rem;
+            border-radius: 1rem;
+            border: 2px solid rgba(59, 130, 246, 0.2);
+            margin-top: 3rem;
+            text-align: center;
+        }
+        .cta-section h3 {
+            color: #60a5fa;
+            margin-bottom: 1rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            color: white;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+        }
+        .btn-secondary {
+            background: transparent;
+            color: #3b82f6;
+            border: 2px solid #3b82f6;
+        }
+        footer {
+            background: rgba(15, 23, 42, 0.95);
+            border-top: 1px solid rgba(148, 163, 184, 0.1);
+            padding: 2rem 0;
+            text-align: center;
+            color: #94a3b8;
+            margin-top: 4rem;
+        }
+        .footer-links {
+            margin-top: 1rem;
+            font-size: 0.875rem;
+        }
+        .footer-links a {
+            color: #60a5fa;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        .footer-links a:hover {
+            color: #a78bfa;
+        }
+        .back-link {
+            color: #60a5fa;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+        @media (max-width: 768px) {
+            .article-header h1 { font-size: 1.8rem; }
+            .container { padding: 0 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">LM</a>
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#blog">Blog</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <article class="article-container">
+            <a href="index.html#blog" class="back-link">← Back to Blog</a>
+            
+            <div class="article-header">
+                <h1>Fair Value Gap Strategy: Complete Trading Guide</h1>
+                <div class="article-meta">
+                    Posted on April 13, 2026 | 13 min read | By Leakey Maitethia
+                </div>
+            </div>
+
+            <div class="article-content">
+                <h2>What is a Fair Value Gap (FVG)?</h2>
+                <p>A Fair Value Gap (FVG) is a price imbalance created when the market gaps over a level without trading there. When price moves rapidly (usually on high volume), it can skip over a price level entirely. This creates an "unfair" area that the market naturally returns to fill.</p>
+
+                <p>Fair Value Gaps are one of the most reliable setups in ICT trading because they represent areas of institutional interest.</p>
+
+                <h2>How Fair Value Gaps Form</h2>
+                <h3>The Three-Candle Pattern</h3>
+                <p>A Fair Value Gap is identified by a specific three-candle pattern:</p>
+                <ol>
+                    <li><strong>Candle 1:</strong> Normal candle with a body and wicks</li>
+                    <li><strong>Candle 2:</strong> Large gap candle that gaps away from Candle 1</li>
+                    <li><strong>Candle 3:</strong> Candle that doesn't fill the gap</li>
+                </ol>
+
+                <h3>Example: Bullish FVG</h3>
+                <p>Imagine these price levels:</p>
+                <ul>
+                    <li>Candle 1: High 5,100, Low 5,050</li>
+                    <li>Candle 2: High 5,200, Low 5,150 (gaps up from Candle 1)</li>
+                    <li>Candle 3: High 5,180, Low 5,140 (doesn't fill the gap)</li>
+                </ul>
+                <p>The gap between Candle 1's high (5,100) and Candle 2's low (5,150) is the Fair Value Gap. This area is "unfair" and the market will likely return to fill it.</p>
+
+                <h2>Types of Fair Value Gaps</h2>
+                <h3>Bullish FVG (Imbalance Up)</h3>
+                <p>Occurs when price gaps up rapidly. The gap between the high of the first candle and the low of the second candle is the FVG. Price typically returns to fill this gap, creating a buying opportunity.</p>
+
+                <h3>Bearish FVG (Imbalance Down)</h3>
+                <p>Occurs when price gaps down rapidly. The gap between the low of the first candle and the high of the second candle is the FVG. Price typically returns to fill this gap, creating a selling opportunity.</p>
+
+                <h2>Trading Fair Value Gaps</h2>
+                <h3>Strategy 1: FVG Retest Trade</h3>
+                <p>The most common FVG strategy is to wait for price to return and retest the gap:</p>
+                <ol>
+                    <li>Identify the FVG</li>
+                    <li>Wait for price to return to the FVG area</li>
+                    <li>Enter when price retests the FVG</li>
+                    <li>Stop loss: Just beyond the FVG</li>
+                    <li>Target: Next resistance/support level</li>
+                </ol>
+
+                <h3>Strategy 2: FVG Breakout Trade</h3>
+                <p>Sometimes price doesn't return to fill the FVG immediately. Instead, it breaks through it:</p>
+                <ol>
+                    <li>Identify the FVG</li>
+                    <li>Wait for price to break through the FVG</li>
+                    <li>Enter on the breakout</li>
+                    <li>Stop loss: Below the FVG</li>
+                    <li>Target: Next major level</li>
+                </ol>
+
+                <h3>Strategy 3: FVG Confluence Trade</h3>
+                <p>The most powerful trades combine FVG with other signals:</p>
+                <ul>
+                    <li>FVG + Market Structure Break</li>
+                    <li>FVG + SMT Divergence</li>
+                    <li>FVG + Support/Resistance Level</li>
+                    <li>FVG + Volume Spike</li>
+                </ul>
+
+                <h2>Identifying Quality FVGs</h2>
+                <h3>High-Quality FVG Characteristics</h3>
+                <ul>
+                    <li><strong>Large gap:</strong> The bigger the gap, the more significant the imbalance</li>
+                    <li><strong>High volume:</strong> High volume on the gap candle indicates institutional activity</li>
+                    <li><strong>At key levels:</strong> FVGs at support/resistance are more reliable</li>
+                    <li><strong>In trending markets:</strong> FVGs work better in strong trends</li>
+                    <li><strong>Multiple timeframe confirmation:</strong> FVGs on multiple timeframes are stronger</li>
+                </ul>
+
+                <h3>Low-Quality FVG Characteristics</h3>
+                <ul>
+                    <li>Small gap (less than 0.5% of price)</li>
+                    <li>Low volume on the gap candle</li>
+                    <li>In the middle of a consolidation</li>
+                    <li>During low-volatility periods</li>
+                </ul>
+
+                <h2>Common FVG Mistakes</h2>
+                <ol>
+                    <li><strong>Trading every FVG:</strong> Only trade high-quality FVGs with confluence</li>
+                    <li><strong>Ignoring volume:</strong> Low volume FVGs often fail</li>
+                    <li><strong>Poor stop placement:</strong> Place stops just beyond the FVG</li>
+                    <li><strong>Overleveraging:</strong> Use proper position sizing</li>
+                    <li><strong>Trading against the trend:</strong> Trade FVGs in the direction of the trend</li>
+                </ol>
+
+                <h2>FVG on Different Timeframes</h2>
+                <p>Fair Value Gaps work on all timeframes:</p>
+                <ul>
+                    <li><strong>Daily:</strong> Large FVGs represent major imbalances</li>
+                    <li><strong>4-Hour:</strong> Good for intermediate trades</li>
+                    <li><strong>1-Hour:</strong> Good for day trading</li>
+                    <li><strong>15-Minute:</strong> Good for scalping</li>
+                </ul>
+                <p>Higher timeframe FVGs are more reliable than lower timeframe FVGs.</p>
+
+                <h2>Advanced: Multiple FVGs</h2>
+                <p>Sometimes multiple FVGs form in sequence. When this happens:</p>
+                <ul>
+                    <li>The first FVG is usually filled quickly</li>
+                    <li>The second FVG becomes the primary target</li>
+                    <li>Multiple FVGs indicate strong institutional activity</li>
+                </ul>
+
+                <h2>Conclusion</h2>
+                <p>Fair Value Gaps are one of the most reliable setups in price action trading. By identifying quality FVGs, waiting for confirmation, and combining them with other signals, you can build a high-probability trading system.</p>
+
+                <p>Remember: The best FVG trades are those that combine multiple confluence factors. Don't trade every FVG—only trade the best ones.</p>
+
+                <h2>Related Articles</h2>
+                <ul>
+                    <li><a href="market-structure-shifts.html" style="color: #60a5fa;">Market Structure Shifts: How to Identify Key Levels</a> - Combine FVGs with market structure breaks</li>
+                    <li><a href="smt-divergence.html" style="color: #60a5fa;">SMT Divergence Explained: ES vs NQ Example</a> - Confirm FVGs with divergence</li>
+                    <li><a href="ict-trading-basics.html" style="color: #60a5fa;">ICT Trading Basics: Complete Guide to Inner Circle Trading</a> - Learn the fundamentals</li>
+                    <li><a href="liquidity-concepts.html" style="color: #60a5fa;">Liquidity Concepts: How Smart Money Hunts Stops</a> - Understand institutional price manipulation</li>
+                    <li><a href="confluence-trading-strategy.html" style="color: #60a5fa;">The Power of Confluence: ICT, SMT, and ML Strategy</a> - Combine all signals for maximum edge</li>
+                </ul>
+
+                <div class="cta-section">
+                    <h3>Need FVG Detection Automation?</h3>
+                    <p>I build custom TradingView indicators that automatically identify Fair Value Gaps and alert you when price retests them.</p>
+                    <a href="index.html#contact" class="btn btn-primary">Build Your Indicator</a>
+                    <a href="https://t.me/LeakeyLK2" class="btn btn-secondary" target="_blank">Message on Telegram</a>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Leakey Maitethia. All rights reserved. | ML Engineer & Trading Systems Architect</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#blog">Blog</a>
+                <a href="index.html#contact">Contact</a>
+                <a href="https://github.com/maitethialeakey-droid/leakey-personal-brand" target="_blank">GitHub</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Disclaimer</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

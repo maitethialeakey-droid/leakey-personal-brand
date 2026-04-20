@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Building Python Trading Bots: Complete guide to automated trading with Python, ib_insync, and TradingView webhooks. Learn to build 24/7 trading automation.">
+    <meta name="keywords" content="Python Trading Bot, Automated Trading, ib_insync, Trading Automation, Algorithmic Trading, Python">
+    <meta name="author" content="Leakey Maitethia">
+    <title>Building Python Trading Bots | Leakey Maitethia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            line-height: 1.8;
+        }
+        header {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+        .nav-links a:hover {
+            color: #3b82f6;
+        }
+        .article-container {
+            padding: 4rem 0;
+        }
+        .article-header {
+            margin-bottom: 3rem;
+        }
+        .article-header h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #f1f5f9;
+        }
+        .article-meta {
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+        .article-content {
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+        .article-content h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.8rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #60a5fa;
+        }
+        .article-content h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #a78bfa;
+        }
+        .article-content p {
+            margin-bottom: 1.5rem;
+            color: #cbd5e1;
+        }
+        .article-content ul, .article-content ol {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .article-content li {
+            margin-bottom: 0.75rem;
+            color: #cbd5e1;
+        }
+        .code-block {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #60a5fa;
+        }
+        .highlight {
+            background: rgba(59, 130, 246, 0.1);
+            border-left: 4px solid #3b82f6;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0.5rem;
+        }
+        .highlight strong {
+            color: #60a5fa;
+        }
+        .cta-section {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            padding: 2.5rem;
+            border-radius: 1rem;
+            border: 2px solid rgba(59, 130, 246, 0.2);
+            margin-top: 3rem;
+            text-align: center;
+        }
+        .cta-section h3 {
+            color: #60a5fa;
+            margin-bottom: 1rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            color: white;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+        }
+        .btn-secondary {
+            background: transparent;
+            color: #3b82f6;
+            border: 2px solid #3b82f6;
+        }
+        footer {
+            background: rgba(15, 23, 42, 0.95);
+            border-top: 1px solid rgba(148, 163, 184, 0.1);
+            padding: 2rem 0;
+            text-align: center;
+            color: #94a3b8;
+            margin-top: 4rem;
+        }
+        .footer-links {
+            margin-top: 1rem;
+            font-size: 0.875rem;
+        }
+        .footer-links a {
+            color: #60a5fa;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        .footer-links a:hover {
+            color: #a78bfa;
+        }
+        .back-link {
+            color: #60a5fa;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+        @media (max-width: 768px) {
+            .article-header h1 { font-size: 1.8rem; }
+            .container { padding: 0 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">LM</a>
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#blog">Blog</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <article class="article-container">
+            <a href="index.html#blog" class="back-link">← Back to Blog</a>
+            
+            <div class="article-header">
+                <h1>Building Python Trading Bots</h1>
+                <div class="article-meta">
+                    Posted on April 12, 2026 | 11 min read | By Leakey Maitethia
+                </div>
+            </div>
+
+            <div class="article-content">
+                <h2>Introduction: Why Automate Your Trading?</h2>
+                <p>Manual trading has limitations: you can't trade 24/7, emotions influence decisions, and you can't execute complex strategies instantly. Python trading bots solve these problems by automating your entire trading workflow.</p>
+                
+                <p>This guide covers building production-ready trading bots with Python, ib_insync, and TradingView webhook integration.</p>
+
+                <h2>Why Python for Trading Bots?</h2>
+                <h3>Advantages of Python</h3>
+                <ul>
+                    <li><strong>Easy to learn:</strong> Simple syntax makes development fast</li>
+                    <li><strong>Rich ecosystem:</strong> Libraries for data analysis, machine learning, and trading</li>
+                    <li><strong>Fast execution:</strong> Suitable for algorithmic trading</li>
+                    <li><strong>Community support:</strong> Large trading community with shared resources</li>
+                    <li><strong>Integration:</strong> Works with Interactive Brokers, TradingView, and other platforms</li>
+                </ul>
+
+                <h2>Core Components of a Trading Bot</h2>
+                <h3>1. Market Data Feed</h3>
+                <p>Your bot needs real-time market data to make trading decisions. Sources include:</p>
+                <ul>
+                    <li>Interactive Brokers (via ib_insync)</li>
+                    <li>TradingView webhooks</li>
+                    <li>Public APIs (Binance, Kraken for crypto)</li>
+                    <li>Data providers (Alpha Vantage, IEX Cloud)</li>
+                </ul>
+
+                <h3>2. Trading Strategy</h3>
+                <p>The logic that determines when to buy/sell. Examples:</p>
+                <ul>
+                    <li>Moving average crossover</li>
+                    <li>RSI overbought/oversold</li>
+                    <li>ICT market structure breaks</li>
+                    <li>Custom ML models</li>
+                </ul>
+
+                <h3>3. Order Execution</h3>
+                <p>Submitting trades to your broker with proper risk management:</p>
+                <ul>
+                    <li>Position sizing based on account risk</li>
+                    <li>Stop loss placement</li>
+                    <li>Profit target setting</li>
+                    <li>Order type selection (market, limit, etc.)</li>
+                </ul>
+
+                <h3>4. Risk Management</h3>
+                <p>Protecting your capital:</p>
+                <ul>
+                    <li>Maximum risk per trade (1-2% rule)</li>
+                    <li>Daily loss limits</li>
+                    <li>Position size limits</li>
+                    <li>Correlation checks</li>
+                </ul>
+
+                <h2>Setting Up Your First Trading Bot</h2>
+                <h3>Step 1: Install Required Libraries</h3>
+                <div class="code-block">
+pip install ib-insync<br>
+pip install pandas<br>
+pip install numpy<br>
+pip install flask  # For webhook server
+                </div>
+
+                <h3>Step 2: Connect to Interactive Brokers</h3>
+                <div class="code-block">
+from ib_insync import *<br>
+<br>
+# Connect to IB<br>
+ib = IB()<br>
+ib.connect('127.0.0.1', 7497, clientId=1)<br>
+<br>
+# Get account info<br>
+account = ib.accountSummary()<br>
+print(f"Account Balance: {account}")
+                </div>
+
+                <h3>Step 3: Create a Simple Trading Strategy</h3>
+                <div class="code-block">
+def calculate_moving_averages(bars, fast=10, slow=20):<br>
+    closes = [bar.close for bar in bars]<br>
+    fast_ma = sum(closes[-fast:]) / fast<br>
+    slow_ma = sum(closes[-slow:]) / slow<br>
+    return fast_ma, slow_ma<br>
+<br>
+def check_signal(fast_ma, slow_ma, previous_fast, previous_slow):<br>
+    # Crossover signal<br>
+    if previous_fast < previous_slow and fast_ma > slow_ma:<br>
+        return "BUY"<br>
+    elif previous_fast > previous_slow and fast_ma < slow_ma:<br>
+        return "SELL"<br>
+    return None
+                </div>
+
+                <h3>Step 4: Execute Trades</h3>
+                <div class="code-block">
+def place_trade(ib, symbol, signal, account_size, risk_percent=0.01):<br>
+    # Calculate position size<br>
+    risk_amount = account_size * risk_percent<br>
+    stop_loss_pips = 50<br>
+    position_size = int(risk_amount / (stop_loss_pips * 10))<br>
+    <br>
+    if signal == "BUY":<br>
+        # Place buy order<br>
+        contract = Forex(symbol)<br>
+        order = MarketOrder('BUY', position_size)<br>
+        trade = ib.placeOrder(contract, order)<br>
+        print(f"Buy order placed: {trade}")<br>
+    elif signal == "SELL":<br>
+        # Place sell order<br>
+        contract = Forex(symbol)<br>
+        order = MarketOrder('SELL', position_size)<br>
+        trade = ib.placeOrder(contract, order)<br>
+        print(f"Sell order placed: {trade}")
+                </div>
+
+                <h2>Advanced Features</h2>
+                <h3>TradingView Webhook Integration</h3>
+                <p>Receive trading signals from TradingView alerts:</p>
+                <div class="code-block">
+from flask import Flask, request<br>
+<br>
+app = Flask(__name__)<br>
+<br>
+@app.route('/webhook', methods=['POST'])<br>
+def handle_webhook():<br>
+    data = request.json<br>
+    signal = data.get('signal')  # BUY or SELL<br>
+    symbol = data.get('symbol')<br>
+    <br>
+    if signal == 'BUY':<br>
+        place_trade(ib, symbol, 'BUY', account_balance)<br>
+    elif signal == 'SELL':<br>
+        place_trade(ib, symbol, 'SELL', account_balance)<br>
+    <br>
+    return {'status': 'success'}<br>
+<br>
+if __name__ == '__main__':<br>
+    app.run(port=5000)
+                </div>
+
+                <h3>Performance Tracking</h3>
+                <p>Monitor your bot's performance with logging and analytics:</p>
+                <ul>
+                    <li>Track all trades (entry, exit, P&L)</li>
+                    <li>Calculate win rate and profit factor</li>
+                    <li>Monitor drawdowns</li>
+                    <li>Generate daily/weekly reports</li>
+                </ul>
+
+                <h2>Risk Management Best Practices</h2>
+                <div class="highlight">
+                    <strong>Critical Rules:</strong>
+                    <ul>
+                        <li>Never risk more than 1-2% per trade</li>
+                        <li>Set daily loss limits (stop trading after 3 losses)</li>
+                        <li>Always use stop losses</li>
+                        <li>Monitor correlations (don't over-concentrate)</li>
+                        <li>Test thoroughly before live trading</li>
+                    </ul>
+                </div>
+
+                <h2>Common Pitfalls to Avoid</h2>
+                <ol>
+                    <li><strong>Over-optimization:</strong> Don't create bots that only work on historical data</li>
+                    <li><strong>Ignoring slippage:</strong> Account for execution delays and spreads</li>
+                    <li><strong>No error handling:</strong> Bots crash without proper exception handling</li>
+                    <li><strong>Insufficient logging:</strong> Can't debug issues without detailed logs</li>
+                    <li><strong>Not testing:</strong> Always backtest and paper trade first</li>
+                    <li><strong>Ignoring market conditions:</strong> Strategies work differently in trending vs ranging markets</li>
+                </ol>
+
+                <h2>Deployment Considerations</h2>
+                <h3>Where to Run Your Bot</h3>
+                <ul>
+                    <li><strong>Local computer:</strong> Simple but requires always-on setup</li>
+                    <li><strong>Cloud server (AWS, DigitalOcean):</strong> Reliable 24/7 execution</li>
+                    <li><strong>VPS:</strong> Dedicated server for trading</li>
+                    <li><strong>Raspberry Pi:</strong> Low-cost, low-power option</li>
+                </ul>
+
+                <h3>Monitoring and Alerts</h3>
+                <p>Set up monitoring to catch issues:</p>
+                <ul>
+                    <li>Email alerts for trades and errors</li>
+                    <li>Telegram notifications for important events</li>
+                    <li>Dashboard for real-time monitoring</li>
+                    <li>Regular health checks</li>
+                </ul>
+
+                <h2>Next Steps</h2>
+                <p>Once you have a basic bot working:</p>
+                <ul>
+                    <li>Backtest on historical data</li>
+                    <li>Paper trade (simulate with no real money)</li>
+                    <li>Start with small position sizes</li>
+                    <li>Monitor performance closely</li>
+                    <li>Gradually increase position sizes</li>
+                    <li>Continuously improve your strategy</li>
+                </ul>
+
+                <h2>Conclusion</h2>
+                <p>Python trading bots can automate your trading and execute strategies 24/7. However, they're only as good as the strategy they implement. Start simple, test thoroughly, and gradually add complexity as you gain confidence.</p>
+
+                <h2>Related Articles</h2>
+                <ul>
+                    <li><a href="ict-trading-basics.html" style="color: #60a5fa;">ICT Trading Basics: Complete Guide to Inner Circle Trading</a> - Learn trading concepts to implement in your bot</li>
+                    <li><a href="risk-management.html" style="color: #60a5fa;">Risk Management in Trading: Position Sizing Guide</a> - Essential for bot development</li>
+                    <li><a href="tradingview-indicator-guide.html" style="color: #60a5fa;">How to Build a TradingView Indicator (Beginner Guide)</a> - Create signals for your bot</li>
+                    <li><a href="market-structure-shifts.html" style="color: #60a5fa;">Market Structure Shifts: How to Identify Key Levels</a> - Implement market structure logic</li>
+                    <li><a href="confluence-trading-strategy.html" style="color: #60a5fa;">The Power of Confluence: ICT, SMT, and ML Strategy</a> - Advanced bot strategies</li>
+                </ul>
+
+                <div class="cta-section">
+                    <h3>Need a Custom Trading Bot?</h3>
+                    <p>I build production-ready Python trading bots with proper risk management, backtesting, and 24/7 monitoring. Let's automate your trading strategy.</p>
+                    <a href="index.html#contact" class="btn btn-primary">Start Your Project</a>
+                    <a href="https://t.me/LeakeyLK2" class="btn btn-secondary" target="_blank">Message on Telegram</a>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Leakey Maitethia. All rights reserved. | ML Engineer & Trading Systems Architect</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#blog">Blog</a>
+                <a href="index.html#contact">Contact</a>
+                <a href="https://github.com/maitethialeakey-droid/leakey-personal-brand" target="_blank">GitHub</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Disclaimer</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

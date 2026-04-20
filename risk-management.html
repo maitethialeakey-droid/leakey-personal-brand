@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Risk Management in Trading: Position Sizing Guide. Learn essential risk management principles including position sizing, stop-loss placement, and portfolio optimization.">
+    <meta name="keywords" content="Risk Management, Position Sizing, Stop Loss, Trading Risk, Portfolio Management, Risk Control">
+    <meta name="author" content="Leakey Maitethia">
+    <title>Risk Management in Trading: Position Sizing Guide | Leakey Maitethia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            line-height: 1.8;
+        }
+        header {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+        .nav-links a:hover {
+            color: #3b82f6;
+        }
+        .article-container {
+            padding: 4rem 0;
+        }
+        .article-header {
+            margin-bottom: 3rem;
+        }
+        .article-header h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #f1f5f9;
+        }
+        .article-meta {
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+        .article-content {
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+        .article-content h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.8rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #60a5fa;
+        }
+        .article-content h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #a78bfa;
+        }
+        .article-content p {
+            margin-bottom: 1.5rem;
+            color: #cbd5e1;
+        }
+        .article-content ul, .article-content ol {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .article-content li {
+            margin-bottom: 0.75rem;
+            color: #cbd5e1;
+        }
+        .highlight {
+            background: rgba(59, 130, 246, 0.1);
+            border-left: 4px solid #3b82f6;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0.5rem;
+        }
+        .highlight strong {
+            color: #60a5fa;
+        }
+        .cta-section {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            padding: 2.5rem;
+            border-radius: 1rem;
+            border: 2px solid rgba(59, 130, 246, 0.2);
+            margin-top: 3rem;
+            text-align: center;
+        }
+        .cta-section h3 {
+            color: #60a5fa;
+            margin-bottom: 1rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            color: white;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+        }
+        .btn-secondary {
+            background: transparent;
+            color: #3b82f6;
+            border: 2px solid #3b82f6;
+        }
+        footer {
+            background: rgba(15, 23, 42, 0.95);
+            border-top: 1px solid rgba(148, 163, 184, 0.1);
+            padding: 2rem 0;
+            text-align: center;
+            color: #94a3b8;
+            margin-top: 4rem;
+        }
+        .footer-links {
+            margin-top: 1rem;
+            font-size: 0.875rem;
+        }
+        .footer-links a {
+            color: #60a5fa;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        .footer-links a:hover {
+            color: #a78bfa;
+        }
+        .back-link {
+            color: #60a5fa;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+        @media (max-width: 768px) {
+            .article-header h1 { font-size: 1.8rem; }
+            .container { padding: 0 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">LM</a>
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#blog">Blog</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <article class="article-container">
+            <a href="index.html#blog" class="back-link">← Back to Blog</a>
+            
+            <div class="article-header">
+                <h1>Risk Management in Trading: Position Sizing Guide</h1>
+                <div class="article-meta">
+                    Posted on April 10, 2026 | 14 min read | By Leakey Maitethia
+                </div>
+            </div>
+
+            <div class="article-content">
+                <h2>Why Risk Management is Everything</h2>
+                <p>The difference between successful traders and broke traders isn't who has the best trading strategy—it's who manages risk properly. You can have a 50% win rate and still be profitable if you risk 1% and make 2%. Conversely, you can have a 70% win rate and go broke if you risk 10% per trade.</p>
+
+                <p>Risk management is the most important skill in trading. Master it, and you'll survive long enough to profit. Ignore it, and you'll blow up your account.</p>
+
+                <h2>The Golden Rules of Risk Management</h2>
+                <div class="highlight">
+                    <strong>Rule 1: Never Risk More Than 1-2% Per Trade</strong><br>
+                    This is the most important rule. If you risk more than 2%, you're gambling, not trading.
+                </div>
+
+                <div class="highlight">
+                    <strong>Rule 2: Always Use a Stop Loss</strong><br>
+                    Every trade must have a predetermined stop loss. No exceptions.
+                </div>
+
+                <div class="highlight">
+                    <strong>Rule 3: Define Your Risk Before Entering</strong><br>
+                    Calculate your position size based on your stop loss distance, not on how much you want to make.
+                </div>
+
+                <h2>Position Sizing Formula</h2>
+                <p>The most important calculation in trading is position sizing. Here's the formula:</p>
+                <p><strong>Position Size = (Account Size × Risk %) / Stop Loss Distance</strong></p>
+
+                <h3>Example Calculation</h3>
+                <p>Let's say:</p>
+                <ul>
+                    <li>Account Size: $10,000</li>
+                    <li>Risk Per Trade: 1% = $100</li>
+                    <li>Entry Price: $100</li>
+                    <li>Stop Loss: $95</li>
+                    <li>Stop Loss Distance: $5</li>
+                </ul>
+                <p><strong>Position Size = $100 / $5 = 20 shares</strong></p>
+                <p>If your stop loss is hit, you lose exactly $100 (1% of your account).</p>
+
+                <h2>Stop Loss Placement</h2>
+                <h3>Where to Place Your Stop Loss</h3>
+                <p>Your stop loss should be placed at a logical level, not at an arbitrary distance:</p>
+                <ul>
+                    <li><strong>Below a swing low:</strong> For long trades, place stops below the recent swing low</li>
+                    <li><strong>Above a swing high:</strong> For short trades, place stops above the recent swing high</li>
+                    <li><strong>Beyond key support/resistance:</strong> Place stops beyond key technical levels</li>
+                    <li><strong>Below a market structure level:</strong> For ICT traders, place stops beyond market structure breaks</li>
+                </ul>
+
+                <h3>Stop Loss Mistakes</h3>
+                <ol>
+                    <li><strong>Placing stops at round numbers:</strong> Stops at $100, $50, etc. get hit too easily</li>
+                    <li><strong>Placing stops too close:</strong> You'll get stopped out on noise</li>
+                    <li><strong>Placing stops too far:</strong> Your risk becomes too large</li>
+                    <li><strong>Moving stops against you:</strong> Never move a stop loss to increase your risk</li>
+                    <li><strong>Not using stops:</strong> This is how traders blow up accounts</li>
+                </ol>
+
+                <h2>Profit Targets</h2>
+                <h3>Setting Realistic Profit Targets</h3>
+                <p>Your profit target should be based on technical levels, not on arbitrary percentages:</p>
+                <ul>
+                    <li><strong>Next resistance/support:</strong> Target the next technical level</li>
+                    <li><strong>Risk-to-reward ratio:</strong> Aim for at least 1:2 (risk $1 to make $2)</li>
+                    <li><strong>Market structure:</strong> Target swing highs/lows</li>
+                    <li><strong>Multiple targets:</strong> Take partial profits at different levels</li>
+                </ul>
+
+                <h3>The 1:2 Risk-to-Reward Rule</h3>
+                <p>If you risk $100 per trade, your target should be to make at least $200. This way, even with a 50% win rate, you're profitable:</p>
+                <ul>
+                    <li>5 winning trades: +$1,000</li>
+                    <li>5 losing trades: -$500</li>
+                    <li>Net: +$500 profit</li>
+                </ul>
+
+                <h2>Daily and Weekly Risk Limits</h2>
+                <h3>Set Daily Loss Limits</h3>
+                <p>Don't trade the entire day if you've had a bad start. Set a daily loss limit:</p>
+                <ul>
+                    <li>If you lose 2% of your account in a day, stop trading</li>
+                    <li>If you lose 3 trades in a row, stop trading</li>
+                    <li>If you're emotionally affected, stop trading</li>
+                </ul>
+
+                <h3>Weekly Risk Management</h3>
+                <p>Track your weekly performance:</p>
+                <ul>
+                    <li>How many trades did you take?</li>
+                    <li>What was your win rate?</li>
+                    <li>What was your average win/loss?</li>
+                    <li>What was your total profit/loss?</li>
+                </ul>
+
+                <h2>Portfolio Risk Management</h2>
+                <h3>Correlation Risk</h3>
+                <p>Don't trade multiple correlated assets at the same time. If you're long ES, don't also go long NQ. If both move against you, you'll lose on both trades.</p>
+
+                <h3>Sector Risk</h3>
+                <p>Avoid having all your positions in the same sector. Diversify across different markets.</p>
+
+                <h3>Leverage Risk</h3>
+                <p>Be careful with leverage. It amplifies both gains and losses. For beginners, avoid leverage entirely.</p>
+
+                <h2>Risk Management in Different Market Conditions</h2>
+                <h3>High Volatility Markets</h3>
+                <p>In high volatility, increase your stop loss distance and reduce position size:</p>
+                <ul>
+                    <li>Wider stops = larger position sizes needed to maintain 1% risk</li>
+                    <li>Reduce position size instead of increasing risk</li>
+                </ul>
+
+                <h3>Low Volatility Markets</h3>
+                <p>In low volatility, you can use tighter stops and larger positions.</p>
+
+                <h3>Trending Markets</h3>
+                <p>In strong trends, risk management is easier because trends tend to continue. Use wider stops and follow the trend.</p>
+
+                <h3>Ranging Markets</h3>
+                <p>In ranging markets, be more conservative. Ranges often break, so use tighter stops.</p>
+
+                <h2>Common Risk Management Mistakes</h2>
+                <ol>
+                    <li><strong>Risking too much:</strong> Risking more than 2% per trade</li>
+                    <li><strong>No stop losses:</strong> Trading without predetermined stops</li>
+                    <li><strong>Moving stops against you:</strong> Increasing your risk after entering</li>
+                    <li><strong>Revenge trading:</strong> Increasing position size after losses</li>
+                    <li><strong>Ignoring correlation:</strong> Trading too many correlated positions</li>
+                    <li><strong>No daily limits:</strong> Trading all day even after losses</li>
+                </ol>
+
+                <h2>Risk Management Psychology</h2>
+                <p>Risk management isn't just about numbers—it's about psychology:</p>
+                <ul>
+                    <li><strong>Discipline:</strong> Stick to your risk rules even when you're confident</li>
+                    <li><strong>Patience:</strong> Wait for high-probability setups</li>
+                    <li><strong>Acceptance:</strong> Accept that losses are part of trading</li>
+                    <li><strong>Consistency:</strong> Apply the same risk rules to every trade</li>
+                </ul>
+
+                <h2>Conclusion</h2>
+                <p>Risk management is the foundation of profitable trading. By following these principles—risking 1-2% per trade, using proper stop losses, setting realistic targets, and maintaining daily/weekly limits—you can build a sustainable trading business.</p>
+
+                <p>Remember: The goal isn't to win every trade. The goal is to survive long enough to profit from your edge.</p>
+
+                <h2>Related Articles</h2>
+                <ul>
+                    <li><a href="ict-trading-basics.html" style="color: #60a5fa;">ICT Trading Basics: Complete Guide to Inner Circle Trading</a> - Learn trading concepts to implement with proper risk management</li>
+                    <li><a href="python-trading-bots.html" style="color: #60a5fa;">Building Python Trading Bots</a> - Automate risk management with trading bots</li>
+                    <li><a href="confluence-trading-strategy.html" style="color: #60a5fa;">The Power of Confluence: ICT, SMT, and ML Strategy</a> - High-probability setups require proper risk management</li>
+                    <li><a href="market-structure-shifts.html" style="color: #60a5fa;">Market Structure Shifts: How to Identify Key Levels</a> - Use market structure for stop placement</li>
+                    <li><a href="fvg-strategy.html" style="color: #60a5fa;">Fair Value Gap Strategy: Complete Trading Guide</a> - FVG trading with proper risk management</li>
+                </ul>
+
+                <div class="cta-section">
+                    <h3>Need Help Building Your Risk Management System?</h3>
+                    <p>I help traders implement proper risk management through custom trading bots and position sizing calculators.</p>
+                    <a href="index.html#contact" class="btn btn-primary">Schedule Consultation</a>
+                    <a href="https://t.me/LeakeyLK2" class="btn btn-secondary" target="_blank">Message on Telegram</a>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Leakey Maitethia. All rights reserved. | ML Engineer & Trading Systems Architect</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#blog">Blog</a>
+                <a href="index.html#contact">Contact</a>
+                <a href="https://github.com/maitethialeakey-droid/leakey-personal-brand" target="_blank">GitHub</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Disclaimer</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

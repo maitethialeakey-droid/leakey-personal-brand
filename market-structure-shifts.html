@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Market Structure Shifts: How to Identify Key Levels. Learn to identify swing highs/lows and market structure breaks for professional trading.">
+    <meta name="keywords" content="Market Structure, Swing Highs, Swing Lows, Support Resistance, ICT Trading, Price Action">
+    <meta name="author" content="Leakey Maitethia">
+    <title>Market Structure Shifts: How to Identify Key Levels | Leakey Maitethia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            line-height: 1.8;
+        }
+        header {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+        .nav-links a:hover {
+            color: #3b82f6;
+        }
+        .article-container {
+            padding: 4rem 0;
+        }
+        .article-header {
+            margin-bottom: 3rem;
+        }
+        .article-header h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #f1f5f9;
+        }
+        .article-meta {
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+        .article-content {
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+        .article-content h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.8rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #60a5fa;
+        }
+        .article-content h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #a78bfa;
+        }
+        .article-content p {
+            margin-bottom: 1.5rem;
+            color: #cbd5e1;
+        }
+        .article-content ul, .article-content ol {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .article-content li {
+            margin-bottom: 0.75rem;
+            color: #cbd5e1;
+        }
+        .highlight {
+            background: rgba(59, 130, 246, 0.1);
+            border-left: 4px solid #3b82f6;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0.5rem;
+        }
+        .highlight strong {
+            color: #60a5fa;
+        }
+        .cta-section {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            padding: 2.5rem;
+            border-radius: 1rem;
+            border: 2px solid rgba(59, 130, 246, 0.2);
+            margin-top: 3rem;
+            text-align: center;
+        }
+        .cta-section h3 {
+            color: #60a5fa;
+            margin-bottom: 1rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            color: white;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+        }
+        .btn-secondary {
+            background: transparent;
+            color: #3b82f6;
+            border: 2px solid #3b82f6;
+        }
+        footer {
+            background: rgba(15, 23, 42, 0.95);
+            border-top: 1px solid rgba(148, 163, 184, 0.1);
+            padding: 2rem 0;
+            text-align: center;
+            color: #94a3b8;
+            margin-top: 4rem;
+        }
+        .footer-links {
+            margin-top: 1rem;
+            font-size: 0.875rem;
+        }
+        .footer-links a {
+            color: #60a5fa;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        .footer-links a:hover {
+            color: #a78bfa;
+        }
+        .back-link {
+            color: #60a5fa;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+        @media (max-width: 768px) {
+            .article-header h1 { font-size: 1.8rem; }
+            .container { padding: 0 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">LM</a>
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#blog">Blog</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <article class="article-container">
+            <a href="index.html#blog" class="back-link">← Back to Blog</a>
+            
+            <div class="article-header">
+                <h1>Market Structure Shifts: How to Identify Key Levels</h1>
+                <div class="article-meta">
+                    Posted on April 12, 2026 | 11 min read | By Leakey Maitethia
+                </div>
+            </div>
+
+            <div class="article-content">
+                <h2>What is Market Structure?</h2>
+                <p>Market structure is the foundation of ICT trading. It's the pattern of higher highs and higher lows (uptrend) or lower highs and lower lows (downtrend). Understanding market structure helps you identify key support and resistance levels where the market is likely to reverse.</p>
+
+                <p>Market Structure Shifts (MSS) occur when this pattern breaks, signaling a potential change in trend direction. Professional traders use these shifts to enter trades with high probability setups.</p>
+
+                <h2>The Three Components of Market Structure</h2>
+                <h3>1. Swing High</h3>
+                <p>A swing high is the highest point before price reverses downward. It's a resistance level where sellers take control.</p>
+
+                <h3>2. Swing Low</h3>
+                <p>A swing low is the lowest point before price reverses upward. It's a support level where buyers take control.</p>
+
+                <h3>3. Break of Structure (BOS)</h3>
+                <p>A break of structure occurs when price breaks below a swing low (bearish) or above a swing high (bullish). This signals a potential trend change.</p>
+
+                <h2>Identifying Swing Highs and Lows</h2>
+                <p><strong>Rule:</strong> A swing high requires at least one lower high on each side. A swing low requires at least one higher low on each side.</p>
+
+                <h3>Example: Identifying a Swing High</h3>
+                <p>Imagine a chart with these candles:</p>
+                <ul>
+                    <li>Candle 1: High at 5,100</li>
+                    <li>Candle 2: High at 5,150 ← This is the swing high</li>
+                    <li>Candle 3: High at 5,120</li>
+                </ul>
+                <p>Candle 2 is a swing high because it has lower highs on both sides (5,100 and 5,120).</p>
+
+                <h2>Types of Market Structure</h2>
+                <h3>Uptrend Structure</h3>
+                <p>In an uptrend, each swing high is higher than the previous one, and each swing low is higher than the previous one.</p>
+
+                <h3>Downtrend Structure</h3>
+                <p>In a downtrend, each swing high is lower than the previous one, and each swing low is lower than the previous one.</p>
+
+                <h3>Range/Consolidation</h3>
+                <p>When price moves sideways without creating higher highs or lower lows, it's in a range. This is a neutral structure. During these periods, smart money often builds positions.</p>
+
+                <h2>Identifying Market Structure Shifts</h2>
+                <h3>Bullish MSS (Break of Downtrend)</h3>
+                <p>A bullish MSS occurs when price breaks above a previous swing high in a downtrend:</p>
+                <ol>
+                    <li>Price is in a downtrend (lower highs, lower lows)</li>
+                    <li>Price breaks above the previous swing high</li>
+                    <li>This signals a potential trend reversal to uptrend</li>
+                </ol>
+
+                <h3>Bearish MSS (Break of Uptrend)</h3>
+                <p>A bearish MSS occurs when price breaks below a previous swing low in an uptrend:</p>
+                <ol>
+                    <li>Price is in an uptrend (higher highs, higher lows)</li>
+                    <li>Price breaks below the previous swing low</li>
+                    <li>This signals a potential trend reversal to downtrend</li>
+                </ol>
+
+                <h2>Trading Market Structure Shifts</h2>
+                <h3>Setup: Bullish MSS Trade</h3>
+                <ol>
+                    <li>Identify downtrend with clear swing highs and lows</li>
+                    <li>Wait for price to break above the swing high</li>
+                    <li>Confirm with volume (volume should increase on break)</li>
+                    <li>Enter long on break of swing high</li>
+                    <li>Stop loss: Below the swing low</li>
+                    <li>Target: Next resistance level or swing high</li>
+                </ol>
+
+                <h3>Setup: Bearish MSS Trade</h3>
+                <ol>
+                    <li>Identify uptrend with clear swing highs and lows</li>
+                    <li>Wait for price to break below the swing low</li>
+                    <li>Confirm with volume (volume should increase on break)</li>
+                    <li>Enter short on break of swing low</li>
+                    <li>Stop loss: Above the swing high</li>
+                    <li>Target: Next support level or swing low</li>
+                </ol>
+
+                <h2>Combining MSS with Other Indicators</h2>
+                <h3>MSS + Fair Value Gap</h3>
+                <p>The most powerful setup combines MSS with FVG. When price breaks structure AND there's a FVG nearby, the probability increases significantly.</p>
+
+                <h3>MSS + SMT Divergence</h3>
+                <p>When MSS occurs alongside SMT divergence (ES vs NQ), it's a strong confirmation signal.</p>
+
+                <h3>MSS + Volume Profile</h3>
+                <p>MSS breaks with high volume are more reliable than breaks with low volume.</p>
+
+                <h2>Common Mistakes in Trading MSS</h2>
+                <ol>
+                    <li><strong>Trading every break:</strong> Only trade breaks at key levels with confluence</li>
+                    <li><strong>Ignoring volume:</strong> Low volume breaks often fail</li>
+                    <li><strong>Not confirming:</strong> Wait for close above/below the level, not just a wick</li>
+                    <li><strong>Poor risk management:</strong> Always use stops</li>
+                    <li><strong>Trading against the trend:</strong> Trade breaks in the direction of the trend</li>
+                </ol>
+
+                <h2>Timeframe Considerations</h2>
+                <p>Market structure works on all timeframes:</p>
+                <ul>
+                    <li><strong>Daily:</strong> Swing highs/lows are major support/resistance</li>
+                    <li><strong>4-Hour:</strong> Good for intermediate trades</li>
+                    <li><strong>1-Hour:</strong> Good for day trading</li>
+                    <li><strong>15-Minute:</strong> Good for scalping</li>
+                </ul>
+                <p>Higher timeframe structure is more reliable than lower timeframe structure.</p>
+
+                <h2>Conclusion</h2>
+                <p>Market structure is the foundation of professional trading. By identifying swing highs and lows, recognizing structure breaks, and trading with proper risk management, you can build a profitable trading system.</p>
+
+                <p>Remember: The best traders don't trade every setup—they wait for the best setups with the highest probability.</p>
+
+                <h2>Related Articles</h2>
+                <ul>
+                    <li><a href="fvg-strategy.html" style="color: #60a5fa;">Fair Value Gap Strategy: Complete Trading Guide</a> - Combine FVGs with market structure for stronger signals</li>
+                    <li><a href="smt-divergence.html" style="color: #60a5fa;">SMT Divergence Explained: ES vs NQ Example</a> - Confirm market structure breaks with divergence</li>
+                    <li><a href="tradingview-indicator-guide.html" style="color: #60a5fa;">How to Build a TradingView Indicator (Beginner Guide)</a> - Automate market structure detection</li>
+                    <li><a href="ict-trading-basics.html" style="color: #60a5fa;">ICT Trading Basics: Complete Guide to Inner Circle Trading</a> - Master ICT methodology fundamentals</li>
+                    <li><a href="liquidity-concepts.html" style="color: #60a5fa;">Liquidity Concepts: How Smart Money Hunts Stops</a> - Understand institutional price manipulation</li>
+                </ul>
+
+                <div class="cta-section">
+                    <h3>Need a Custom Market Structure Analyzer?</h3>
+                    <p>I build automated indicators that identify swing highs/lows and market structure breaks in real-time. Get alerts when key levels are broken.</p>
+                    <a href="index.html#contact" class="btn btn-primary">Schedule Free Consultation</a>
+                    <a href="https://t.me/LeakeyLK2" class="btn btn-secondary" target="_blank">Message on Telegram</a>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Leakey Maitethia. All rights reserved. | ML Engineer & Trading Systems Architect</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#blog">Blog</a>
+                <a href="index.html#contact">Contact</a>
+                <a href="https://github.com/maitethialeakey-droid/leakey-personal-brand" target="_blank">GitHub</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Disclaimer</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

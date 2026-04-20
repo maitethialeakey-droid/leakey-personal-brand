@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Liquidity Concepts: How Smart Money Hunts Stops. Learn how institutional traders manipulate price to collect liquidity and execute their positions.">
+    <meta name="keywords" content="Liquidity, Smart Money, Stop Hunting, Institutional Trading, Price Action, ICT Trading">
+    <meta name="author" content="Leakey Maitethia">
+    <title>Liquidity Concepts: How Smart Money Hunts Stops | Leakey Maitethia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            line-height: 1.8;
+        }
+        header {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+        .nav-links a:hover {
+            color: #3b82f6;
+        }
+        .article-container {
+            padding: 4rem 0;
+        }
+        .article-header {
+            margin-bottom: 3rem;
+        }
+        .article-header h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #f1f5f9;
+        }
+        .article-meta {
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+        .article-content {
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+        .article-content h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.8rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #60a5fa;
+        }
+        .article-content h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #a78bfa;
+        }
+        .article-content p {
+            margin-bottom: 1.5rem;
+            color: #cbd5e1;
+        }
+        .article-content ul, .article-content ol {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .article-content li {
+            margin-bottom: 0.75rem;
+            color: #cbd5e1;
+        }
+        .highlight {
+            background: rgba(59, 130, 246, 0.1);
+            border-left: 4px solid #3b82f6;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0.5rem;
+        }
+        .highlight strong {
+            color: #60a5fa;
+        }
+        .cta-section {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            padding: 2.5rem;
+            border-radius: 1rem;
+            border: 2px solid rgba(59, 130, 246, 0.2);
+            margin-top: 3rem;
+            text-align: center;
+        }
+        .cta-section h3 {
+            color: #60a5fa;
+            margin-bottom: 1rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            color: white;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+        }
+        .btn-secondary {
+            background: transparent;
+            color: #3b82f6;
+            border: 2px solid #3b82f6;
+        }
+        footer {
+            background: rgba(15, 23, 42, 0.95);
+            border-top: 1px solid rgba(148, 163, 184, 0.1);
+            padding: 2rem 0;
+            text-align: center;
+            color: #94a3b8;
+            margin-top: 4rem;
+        }
+        .footer-links {
+            margin-top: 1rem;
+            font-size: 0.875rem;
+        }
+        .footer-links a {
+            color: #60a5fa;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        .footer-links a:hover {
+            color: #a78bfa;
+        }
+        .back-link {
+            color: #60a5fa;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+        @media (max-width: 768px) {
+            .article-header h1 { font-size: 1.8rem; }
+            .container { padding: 0 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">LM</a>
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#blog">Blog</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <article class="article-container">
+            <a href="index.html#blog" class="back-link">← Back to Blog</a>
+            
+            <div class="article-header">
+                <h1>Liquidity Concepts: How Smart Money Hunts Stops</h1>
+                <div class="article-meta">
+                    Posted on April 11, 2026 | 12 min read | By Leakey Maitethia
+                </div>
+            </div>
+
+            <div class="article-content">
+                <h2>What is Liquidity in Trading?</h2>
+                <p>Liquidity refers to the ease with which an asset can be bought or sold. In the context of ICT trading, liquidity also refers to the stop losses of retail traders. Institutional traders deliberately move price to collect this liquidity before reversing in their intended direction.</p>
+
+                <p>Understanding liquidity is crucial because it explains why price often moves against you before moving in your favor.</p>
+
+                <h2>Liquidity Pools Explained</h2>
+                <h3>Where Do Retail Traders Place Stops?</h3>
+                <p>Retail traders tend to place stops at obvious technical levels:</p>
+                <ul>
+                    <li>Just below support levels</li>
+                    <li>Just above resistance levels</li>
+                    <li>Just beyond swing highs/lows</li>
+                    <li>At round numbers (like $100, $50, etc.)</li>
+                </ul>
+
+                <h3>Liquidity Pools Form at These Levels</h3>
+                <p>When many retail traders place stops at the same level, a "liquidity pool" forms. Institutional traders know where these stops are and deliberately move price to collect them.</p>
+
+                <h2>How Smart Money Hunts Liquidity</h2>
+                <h3>The Liquidity Hunt Pattern</h3>
+                <p>Smart money follows this pattern:</p>
+                <ol>
+                    <li><strong>Identify liquidity:</strong> Find where retail traders have placed stops</li>
+                    <li><strong>Move price to collect:</strong> Push price to trigger the stops</li>
+                    <li><strong>Reverse direction:</strong> Once stops are collected, move price in the intended direction</li>
+                    <li><strong>Profit:</strong> Execute their main position</li>
+                </ol>
+
+                <h3>Example: Bullish Liquidity Hunt</h3>
+                <p>Imagine a stock at $100:</p>
+                <ul>
+                    <li>Support is at $95</li>
+                    <li>Retail traders place stops at $94 (just below support)</li>
+                    <li>Smart money pushes price down to $94, triggering all the stops</li>
+                    <li>Once stops are collected, smart money buys aggressively</li>
+                    <li>Price reverses and goes up to $110</li>
+                </ul>
+                <p>Retail traders get stopped out at $94. Smart money profits from $94 to $110.</p>
+
+                <h2>Identifying Liquidity Levels</h2>
+                <h3>Key Liquidity Levels</h3>
+                <p>Liquidity pools form at these key levels:</p>
+                <ul>
+                    <li><strong>Swing highs:</strong> Where buyers stop buying</li>
+                    <li><strong>Swing lows:</strong> Where sellers stop selling</li>
+                    <li><strong>Support/Resistance:</strong> Where many traders have orders</li>
+                    <li><strong>Round numbers:</strong> Psychological levels like $100, $50, etc.</li>
+                    <li><strong>Previous highs/lows:</strong> Where many traders have stops</li>
+                </ul>
+
+                <h2>Mitigated vs Unmitigated Liquidity</h2>
+                <h3>Mitigated Liquidity</h3>
+                <p>When price touches a liquidity level and collects the stops, that liquidity is "mitigated." Once mitigated, price often reverses sharply.</p>
+
+                <h3>Unmitigated Liquidity</h3>
+                <p>When price approaches a liquidity level but doesn't touch it, that liquidity remains "unmitigated." Price often returns to collect this unmitigated liquidity later.</p>
+
+                <h2>Trading Liquidity Hunts</h2>
+                <h3>Setup 1: Liquidity Grab and Reversal</h3>
+                <ol>
+                    <li>Identify a key liquidity level (swing high or low)</li>
+                    <li>Wait for price to approach the level</li>
+                    <li>Watch for price to touch the level (collecting liquidity)</li>
+                    <li>Enter when price reverses from the level</li>
+                    <li>Stop loss: Beyond the liquidity level</li>
+                    <li>Target: Next liquidity level</li>
+                </ol>
+
+                <h3>Setup 2: Liquidity Sweep</h3>
+                <p>Sometimes smart money sweeps multiple liquidity levels in sequence:</p>
+                <ol>
+                    <li>Price breaks below a swing low (collecting liquidity)</li>
+                    <li>Price then breaks below another swing low (collecting more liquidity)</li>
+                    <li>After collecting all liquidity, price reverses sharply</li>
+                    <li>Enter on the reversal</li>
+                </ol>
+
+                <h2>Combining Liquidity with Other Signals</h2>
+                <h3>Liquidity + Market Structure</h3>
+                <p>When price breaks market structure AND collects liquidity, it's a strong signal that smart money is accumulating.</p>
+
+                <h3>Liquidity + Fair Value Gap</h3>
+                <p>When a liquidity hunt occurs near a Fair Value Gap, the probability increases significantly.</p>
+
+                <h3>Liquidity + Volume</h3>
+                <p>High volume on a liquidity hunt indicates institutional activity. Low volume hunts often fail.</p>
+
+                <h2>Common Liquidity Mistakes</h2>
+                <ol>
+                    <li><strong>Placing stops at obvious levels:</strong> Smart money targets these stops</li>
+                    <li><strong>Placing stops at round numbers:</strong> Too many traders use these levels</li>
+                    <li><strong>Not understanding liquidity:</strong> Thinking price movement is random</li>
+                    <li><strong>Trading against liquidity hunts:</strong> Don't fight smart money</li>
+                    <li><strong>Ignoring volume:</strong> Low volume hunts often fail</li>
+                </ol>
+
+                <h2>Protecting Yourself from Liquidity Hunts</h2>
+                <h3>Stop Loss Placement</h3>
+                <p>Place your stops at logical levels, not at obvious round numbers:</p>
+                <ul>
+                    <li>Place stops just beyond swing highs/lows, not at them</li>
+                    <li>Avoid round numbers like $100, $50, etc.</li>
+                    <li>Use wider stops to avoid being hunted</li>
+                </ul>
+
+                <h3>Position Sizing</h3>
+                <p>If you're worried about being hunted, reduce your position size and use wider stops.</p>
+
+                <h3>Confluence Trading</h3>
+                <p>Only trade setups with multiple confluence factors. This reduces the chance of being stopped out by a liquidity hunt.</p>
+
+                <h2>Advanced: Predicting Liquidity Hunts</h2>
+                <p>Experienced traders can predict where smart money will hunt liquidity:</p>
+                <ul>
+                    <li>Look at where retail traders are likely to place stops</li>
+                    <li>Identify key support/resistance levels</li>
+                    <li>Watch for price approaching these levels</li>
+                    <li>Predict the direction of the hunt based on market structure</li>
+                </ul>
+
+                <h2>Conclusion</h2>
+                <p>Smart money hunts liquidity to collect retail stop losses. By understanding this concept, you can:</p>
+                <ul>
+                    <li>Avoid placing stops at obvious levels</li>
+                    <li>Trade liquidity hunts for profit</li>
+                    <li>Understand why price often moves against you before moving in your favor</li>
+                    <li>Follow smart money instead of fighting them</li>
+                </ul>
+
+                <h2>Related Articles</h2>
+                <ul>
+                    <li><a href="ict-trading-basics.html" style="color: #60a5fa;">ICT Trading Basics: Complete Guide to Inner Circle Trading</a> - Learn the fundamentals of ICT methodology</li>
+                    <li><a href="market-structure-shifts.html" style="color: #60a5fa;">Market Structure Shifts: How to Identify Key Levels</a> - Identify where liquidity pools form</li>
+                    <li><a href="risk-management.html" style="color: #60a5fa;">Risk Management in Trading: Position Sizing Guide</a> - Proper stop placement for risk management</li>
+                    <li><a href="smt-divergence.html" style="color: #60a5fa;">SMT Divergence Explained: ES vs NQ Example</a> - Confirm liquidity hunts with divergence</li>
+                    <li><a href="confluence-trading-strategy.html" style="color: #60a5fa;">The Power of Confluence: ICT, SMT, and ML Strategy</a> - Combine all signals for maximum edge</li>
+                </ul>
+
+                <div class="cta-section">
+                    <h3>Need Help Identifying Liquidity Levels?</h3>
+                    <p>I build custom TradingView indicators that automatically identify liquidity pools and predict where smart money will hunt next.</p>
+                    <a href="index.html#contact" class="btn btn-primary">Build Your Indicator</a>
+                    <a href="https://t.me/LeakeyLK2" class="btn btn-secondary" target="_blank">Message on Telegram</a>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Leakey Maitethia. All rights reserved. | ML Engineer & Trading Systems Architect</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#blog">Blog</a>
+                <a href="index.html#contact">Contact</a>
+                <a href="https://github.com/maitethialeakey-droid/leakey-personal-brand" target="_blank">GitHub</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Disclaimer</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

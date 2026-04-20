@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SMT Divergence Explained: ES vs NQ Example. Learn how to identify Smart Money Divergence using price action and volume analysis for high-probability trades.">
+    <meta name="keywords" content="SMT Divergence, Smart Money, ES NQ, Trading Signals, Price Action, Volume Analysis">
+    <meta name="author" content="Leakey Maitethia">
+    <title>SMT Divergence Explained: ES vs NQ Example | Leakey Maitethia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            line-height: 1.8;
+        }
+        header {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+        .nav-links a:hover {
+            color: #3b82f6;
+        }
+        .article-container {
+            padding: 4rem 0;
+        }
+        .article-header {
+            margin-bottom: 3rem;
+        }
+        .article-header h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #f1f5f9;
+        }
+        .article-meta {
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+        .article-content {
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+        .article-content h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.8rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #60a5fa;
+        }
+        .article-content h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #a78bfa;
+        }
+        .article-content p {
+            margin-bottom: 1.5rem;
+            color: #cbd5e1;
+        }
+        .article-content ul, .article-content ol {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .article-content li {
+            margin-bottom: 0.75rem;
+            color: #cbd5e1;
+        }
+        .highlight {
+            background: rgba(59, 130, 246, 0.1);
+            border-left: 4px solid #3b82f6;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0.5rem;
+        }
+        .highlight strong {
+            color: #60a5fa;
+        }
+        .cta-section {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            padding: 2.5rem;
+            border-radius: 1rem;
+            border: 2px solid rgba(59, 130, 246, 0.2);
+            margin-top: 3rem;
+            text-align: center;
+        }
+        .cta-section h3 {
+            color: #60a5fa;
+            margin-bottom: 1rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            color: white;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+        }
+        .btn-secondary {
+            background: transparent;
+            color: #3b82f6;
+            border: 2px solid #3b82f6;
+        }
+        footer {
+            background: rgba(15, 23, 42, 0.95);
+            border-top: 1px solid rgba(148, 163, 184, 0.1);
+            padding: 2rem 0;
+            text-align: center;
+            color: #94a3b8;
+            margin-top: 4rem;
+        }
+        .footer-links {
+            margin-top: 1rem;
+            font-size: 0.875rem;
+        }
+        .footer-links a {
+            color: #60a5fa;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        .footer-links a:hover {
+            color: #a78bfa;
+        }
+        .back-link {
+            color: #60a5fa;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+        @media (max-width: 768px) {
+            .article-header h1 { font-size: 1.8rem; }
+            .container { padding: 0 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">LM</a>
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#blog">Blog</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <article class="article-container">
+            <a href="index.html#blog" class="back-link">← Back to Blog</a>
+            
+            <div class="article-header">
+                <h1>SMT Divergence Explained: ES vs NQ Example</h1>
+                <div class="article-meta">
+                    Posted on April 14, 2026 | 12 min read | By Leakey Maitethia
+                </div>
+            </div>
+
+            <div class="article-content">
+                <h2>What is Smart Money Divergence (SMT)?</h2>
+                <p>Smart Money Divergence (SMT) is a powerful trading signal that occurs when two correlated assets move in opposite directions. The most famous example is when the ES (S&P 500) and NQ (Nasdaq 100) diverge—one makes a lower low while the other fails to do so.</p>
+
+                <p>This divergence is the "footprint" of institutional traders accumulating or distributing positions. When you see SMT at key liquidity levels, it's a high-probability signal.</p>
+
+                <h2>Why ES vs NQ Divergence Matters</h2>
+                <p>The ES and NQ are highly correlated. When they diverge, it signals that smart money is making a directional bet:</p>
+                <ul>
+                    <li><strong>Bullish Divergence:</strong> ES makes a lower low, but NQ holds above its previous low. This suggests institutional buyers are protecting the tech sector</li>
+                    <li><strong>Bearish Divergence:</strong> NQ makes a lower low, but ES holds above its previous low. This suggests institutional sellers are targeting tech stocks</li>
+                </ul>
+
+                <h2>Identifying SMT Divergence</h2>
+                <h3>Step 1: Identify the Correlation</h3>
+                <p>First, confirm that ES and NQ are moving together. They typically have a correlation above 0.8.</p>
+
+                <h3>Step 2: Look for a Break</h3>
+                <p>Watch for when one index breaks to a new low while the other doesn't:</p>
+                <ul>
+                    <li>ES makes a lower low (breaks support)</li>
+                    <li>NQ holds above its previous low (support holds)</li>
+                    <li>This is a bullish divergence signal</li>
+                </ul>
+
+                <h3>Step 3: Confirm with Volume</h3>
+                <p>Check volume on the divergence:</p>
+                <ul>
+                    <li>High volume on the divergence = stronger signal</li>
+                    <li>Low volume on the divergence = weaker signal</li>
+                </ul>
+
+                <h3>Step 4: Wait for Confirmation</h3>
+                <p>Don't trade the divergence immediately. Wait for price to confirm by:</p>
+                <ul>
+                    <li>Reversing from the divergence level</li>
+                    <li>Breaking above the previous swing high</li>
+                    <li>Closing above key resistance</li>
+                </ul>
+
+                <h2>Real-World ES vs NQ Example</h2>
+                <h3>Scenario: Bullish Divergence Setup</h3>
+                <p><strong>Market Conditions:</strong> Both ES and NQ are in a downtrend, making lower lows.</p>
+                <p><strong>The Divergence:</strong></p>
+                <ul>
+                    <li>ES makes a new low at 4,000 (breaking previous support at 4,050)</li>
+                    <li>NQ attempts to break below 12,000 but fails, closing at 12,050</li>
+                    <li>This divergence at key support suggests institutional buyers are stepping in</li>
+                </ul>
+                <p><strong>The Trade:</strong></p>
+                <ol>
+                    <li>Wait for confirmation (price reverses from the divergence level)</li>
+                    <li>Enter long when price breaks above the swing high</li>
+                    <li>Stop loss: Below the divergence level</li>
+                    <li>Target: Next resistance level</li>
+                </ol>
+
+                <h2>Types of SMT Divergence</h2>
+                <h3>Divergence at Support</h3>
+                <p>When divergence occurs at a key support level, it's a bullish signal. Institutional buyers are defending the level.</p>
+
+                <h3>Divergence at Resistance</h3>
+                <p>When divergence occurs at a key resistance level, it's a bearish signal. Institutional sellers are defending the level.</p>
+
+                <h3>Divergence in the Middle of a Move</h3>
+                <p>Sometimes divergence occurs in the middle of a trend. This can signal a continuation or reversal depending on context.</p>
+
+                <h2>Combining SMT with Other Signals</h2>
+                <h3>SMT + Market Structure</h3>
+                <p>The most powerful setup combines SMT divergence with a market structure break. When both align, the probability increases significantly.</p>
+
+                <h3>SMT + Fair Value Gap</h3>
+                <p>When SMT divergence occurs near a Fair Value Gap, it's an excellent entry point.</p>
+
+                <h3>SMT + Volume Profile</h3>
+                <p>Check volume profile at the divergence level. High volume nodes suggest institutional activity.</p>
+
+                <h2>Common Mistakes in Trading SMT</h2>
+                <ol>
+                    <li><strong>Trading the divergence immediately:</strong> Wait for confirmation</li>
+                    <li><strong>Ignoring volume:</strong> Low volume divergences often fail</li>
+                    <li><strong>Not using stops:</strong> Always protect your downside</li>
+                    <li><strong>Over-trading:</strong> Only trade high-confluence setups</li>
+                    <li><strong>Ignoring market context:</strong> Divergences work better in trending markets</li>
+                </ol>
+
+                <h2>Monitoring SMT Divergence in Real-Time</h2>
+                <p>To monitor ES vs NQ divergence:</p>
+                <ul>
+                    <li>Open two TradingView charts side-by-side (ES and NQ)</li>
+                    <li>Use the same timeframe for both</li>
+                    <li>Mark swing highs and lows on both charts</li>
+                    <li>Look for divergences at key levels</li>
+                    <li>Set alerts when divergences form</li>
+                </ul>
+
+                <h2>Advanced: Other Divergence Pairs</h2>
+                <p>While ES vs NQ is the most popular, you can also watch:</p>
+                <ul>
+                    <li><strong>ES vs Russell 2000 (IWM):</strong> Large cap vs small cap divergence</li>
+                    <li><strong>Bitcoin vs Ethereum:</strong> Crypto divergence</li>
+                    <li><strong>Gold vs Dollar:</strong> Commodity divergence</li>
+                    <li><strong>Any two correlated assets:</strong> The principle applies universally</li>
+                </ul>
+
+                <h2>Conclusion</h2>
+                <p>Smart Money Divergence is one of the most reliable signals in trading. When institutional traders make directional bets (shown by divergence), retail traders should pay attention. Combine SMT with market structure and other confluence factors for the highest probability setups.</p>
+
+                <h2>Related Articles</h2>
+                <ul>
+                    <li><a href="market-structure-shifts.html" style="color: #60a5fa;">Market Structure Shifts: How to Identify Key Levels</a> - Combine with SMT for stronger signals</li>
+                    <li><a href="fvg-strategy.html" style="color: #60a5fa;">Fair Value Gap Strategy: Complete Trading Guide</a> - Use FVGs with SMT divergence</li>
+                    <li><a href="liquidity-concepts.html" style="color: #60a5fa;">Liquidity Concepts: How Smart Money Hunts Stops</a> - Understand institutional price manipulation</li>
+                    <li><a href="ict-trading-basics.html" style="color: #60a5fa;">ICT Trading Basics: Complete Guide to Inner Circle Trading</a> - Learn the fundamentals</li>
+                    <li><a href="confluence-trading-strategy.html" style="color: #60a5fa;">The Power of Confluence: ICT, SMT, and ML Strategy</a> - Combine all signals for maximum edge</li>
+                </ul>
+
+                <div class="cta-section">
+                    <h3>Need SMT Divergence Detection?</h3>
+                    <p>I build custom TradingView indicators that automatically detect ES vs NQ divergence and alert you in real-time.</p>
+                    <a href="index.html#contact" class="btn btn-primary">Build Your Indicator</a>
+                    <a href="https://t.me/LeakeyLK2" class="btn btn-secondary" target="_blank">Message on Telegram</a>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Leakey Maitethia. All rights reserved. | ML Engineer & Trading Systems Architect</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#blog">Blog</a>
+                <a href="index.html#contact">Contact</a>
+                <a href="https://github.com/maitethialeakey-droid/leakey-personal-brand" target="_blank">GitHub</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Disclaimer</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
