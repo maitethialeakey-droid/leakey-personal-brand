@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Leakey Maitethia - AI Trading Systems Developer | Algorithmic Trader | Software Engineer. Building intelligent trading bots, automation systems, and financial technologies.">
-    <meta name="keywords" content="AI Trading, Algorithmic Trading, Trading Bots, Python, MT5, TradingView, Quant Systems, Software Engineer">
-    <meta name="author" content="Leakey Maitethia">
-    <title>Leakey Maitethia | AI Trading Systems Developer</title>
+    <meta name="description" content="Leakey Labs - Algorithmic Trader, System Builder, Digital Story Developer. Building trading systems, probability models, and financial narratives.">
+    <meta name="keywords" content="Algorithmic Trading, Trading Systems, Quant, Python, Financial Systems, Storytelling">
+    <meta name="author" content="Maitethia Leakey">
+    <title>Leakey Labs | Algorithmic Trading & Financial Systems</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
@@ -19,6 +19,8 @@
             --text-main: #e2e8f0;
             --text-muted: #94a3b8;
             --accent: #60a5fa;
+            --success: #10b981;
+            --warning: #f59e0b;
         }
 
         * {
@@ -61,19 +63,19 @@
 
         .logo {
             font-family: 'Syne', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
+            font-size: 1.3rem;
+            font-weight: 800;
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            letter-spacing: 1px;
         }
 
         .nav-links {
             display: flex;
             gap: 2rem;
             list-style: none;
-            flex-wrap: wrap;
         }
 
         .nav-links a {
@@ -100,7 +102,7 @@
             padding-top: 80px;
         }
 
-        .hero-video-bg {
+        .hero-bg {
             position: absolute;
             top: 0;
             left: 0;
@@ -108,8 +110,8 @@
             height: 100%;
             object-fit: cover;
             z-index: -1;
-            opacity: 0.3;
-            filter: grayscale(50%) brightness(40%);
+            opacity: 0.25;
+            filter: grayscale(100%) brightness(40%);
         }
 
         .hero-overlay {
@@ -122,11 +124,11 @@
             z-index: -1;
         }
 
-        .hero-content h1 {
+        .hero h1 {
             font-family: 'Syne', sans-serif;
-            font-size: 3.5rem;
+            font-size: 4rem;
             font-weight: 800;
-            line-height: 1.2;
+            line-height: 1.1;
             margin-bottom: 1rem;
             background: linear-gradient(135deg, #fff 0%, #60a5fa 100%);
             -webkit-background-clip: text;
@@ -135,17 +137,18 @@
         }
 
         .hero-subtitle {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             color: var(--accent);
             font-weight: 600;
-            margin-bottom: 1rem;
-            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
-        .hero-content p {
+        .hero-tagline {
             font-size: 1.2rem;
             color: var(--text-muted);
-            margin-bottom: 2.5rem;
+            margin-bottom: 3rem;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
@@ -201,7 +204,7 @@
             font-family: 'Syne', sans-serif;
             font-size: 2.5rem;
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 1rem;
             color: white;
         }
 
@@ -215,86 +218,46 @@
             margin-right: auto;
         }
 
-        /* About Me Section */
-        .about-content {
+        /* Proof Section */
+        .proof-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-text h3 {
-            font-family: 'Syne', sans-serif;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: white;
-        }
-
-        .about-text p {
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .skill-item {
-            background: rgba(59, 130, 246, 0.1);
-            padding: 1rem;
-            border-radius: 0.5rem;
-            border-left: 3px solid var(--primary);
-            font-weight: 500;
-            color: #f1f5f9;
-        }
-
-        /* Platforms Grid */
-        .platforms-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
 
-        .platform-card {
+        .proof-card {
             background: var(--bg-card);
-            padding: 2.5rem;
-            border-radius: 1.5rem;
+            border-radius: 1rem;
+            overflow: hidden;
             border: 1px solid rgba(148, 163, 184, 0.1);
-            text-align: center;
             transition: all 0.3s ease;
         }
 
-        .platform-card:hover {
-            transform: translateY(-10px);
+        .proof-card:hover {
             border-color: var(--primary);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transform: translateY(-5px);
         }
 
-        .platform-logo {
-            height: 60px;
-            margin-bottom: 1.5rem;
-            filter: grayscale(100%) brightness(1.5);
-            transition: all 0.3s ease;
+        .proof-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
         }
 
-        .platform-card:hover .platform-logo {
-            filter: grayscale(0%) brightness(1);
+        .proof-info {
+            padding: 1.5rem;
         }
 
-        .platform-card h3 {
+        .proof-info h3 {
             font-family: 'Syne', sans-serif;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
             color: white;
         }
 
-        .platform-card p {
+        .proof-info p {
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         /* Systems Grid */
@@ -327,52 +290,17 @@
         .system-card p {
             color: var(--text-muted);
             line-height: 1.7;
+            font-size: 0.95rem;
         }
 
-        /* Visual Proof Gallery */
-        .proof-grid {
+        /* Stories Section */
+        .stories-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
 
-        .proof-card {
-            background: var(--bg-card);
-            border-radius: 1rem;
-            overflow: hidden;
-            border: 1px solid rgba(148, 163, 184, 0.1);
-        }
-
-        .proof-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .proof-info {
-            padding: 1.5rem;
-        }
-
-        .proof-info h3 {
-            font-family: 'Syne', sans-serif;
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: white;
-        }
-
-        .proof-info p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        /* Projects Grid */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
+        .story-card {
             background: var(--bg-card);
             border-radius: 1rem;
             overflow: hidden;
@@ -380,60 +308,47 @@
             transition: all 0.3s ease;
         }
 
-        .project-card:hover {
+        .story-card:hover {
             border-color: var(--primary);
             transform: translateY(-5px);
         }
 
-        .project-img {
-            width: 100%;
-            height: 180px;
-            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+        .story-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 2rem;
+            min-height: 120px;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Syne', sans-serif;
-            font-weight: 700;
-            color: rgba(255, 255, 255, 0.1);
-            font-size: 2rem;
+            align-items: flex-end;
         }
 
-        .project-info {
-            padding: 1.5rem;
-        }
-
-        .project-info h3 {
+        .story-card h3 {
             font-family: 'Syne', sans-serif;
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
             color: white;
         }
 
-        .project-info p {
-            color: var(--text-muted);
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
+        .story-body {
+            padding: 1.5rem;
         }
 
-        .github-link {
+        .story-body p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .story-link {
             color: var(--primary);
             text-decoration: none;
             font-weight: 600;
             font-size: 0.9rem;
         }
 
-        .github-link:hover {
+        .story-link:hover {
             text-decoration: underline;
         }
 
-        /* Live Widgets */
-        .live-widgets {
-            margin-top: 2rem;
-            border-radius: 1rem;
-            overflow: hidden;
-        }
-
-        /* Articles Section */
+        /* Articles Grid */
         .articles-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -454,16 +369,16 @@
         }
 
         .article-header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            padding: 2rem;
-            min-height: 120px;
+            background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+            padding: 1.5rem;
+            min-height: 100px;
             display: flex;
             align-items: flex-end;
         }
 
         .article-card h3 {
             font-family: 'Syne', sans-serif;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: white;
         }
 
@@ -491,48 +406,58 @@
         /* Footer */
         footer {
             background: #070b14;
-            padding: 4rem 0;
-            text-align: center;
+            padding: 4rem 0 2rem;
             border-top: 1px solid rgba(148, 163, 184, 0.1);
         }
 
-        .footer-logo {
-            font-family: 'Syne', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            display: block;
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h4 {
             color: white;
+            margin-bottom: 1rem;
+            font-weight: 600;
         }
 
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 2rem 0;
-            list-style: none;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
+        .footer-section p,
+        .footer-section a {
             color: var(--text-muted);
-            text-decoration: none;
             font-size: 0.9rem;
+            text-decoration: none;
+            line-height: 1.8;
         }
 
-        .footer-links a:hover {
+        .footer-section a:hover {
             color: var(--primary);
         }
 
-        .copyright {
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(148, 163, 184, 0.1);
             color: #475569;
             font-size: 0.85rem;
         }
 
+        .disclaimer {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 2rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
         @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2rem; }
-            .hero-content p { font-size: 1rem; }
-            .about-content { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero-subtitle { font-size: 1.1rem; }
+            .hero-tagline { font-size: 1rem; }
             .section { padding: 3rem 0; }
             .nav-links { gap: 1rem; font-size: 0.85rem; }
         }
@@ -543,14 +468,13 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo">LM</div>
+                <div class="logo">LEAKEY LABS</div>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#platforms">Platforms</a></li>
+                    <li><a href="#proof">Proof</a></li>
                     <li><a href="#systems">Systems</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#articles">Articles</a></li>
+                    <li><a href="#stories">Stories</a></li>
+                    <li><a href="#insights">Insights</a></li>
                 </ul>
             </nav>
         </div>
@@ -558,132 +482,138 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <img src="assets/hero/hero-bg.jpg" alt="Trading Background" class="hero-video-bg">
+        <img src="assets/hero/hero-bg.jpg" alt="Trading Background" class="hero-bg">
         <div class="hero-overlay"></div>
         <div class="container">
-            <div class="hero-content">
-                <h1>Leakey Maitethia</h1>
-                <div class="hero-subtitle">AI Trading Systems Developer | Algorithmic Trader | Software Engineer</div>
-                <p>Building intelligent trading bots, automation systems, and financial technologies for Forex, Crypto, and Synthetic Markets.</p>
-                <div class="cta-buttons">
-                    <a href="#projects" class="btn btn-primary">View Projects</a>
-                    <a href="#platforms" class="btn btn-secondary">Explore Platforms</a>
-                    <a href="https://github.com/maitethialeakey-droid" class="btn btn-secondary">GitHub</a>
-                </div>
+            <div class="hero-subtitle">LEAKEY LABS</div>
+            <h1>Maitethia Leakey</h1>
+            <div class="hero-tagline">
+                <strong>Algorithmic Trader | System Builder | Digital Story Developer</strong>
+                <br><br>
+                Building trading systems, probability models, and financial narratives. Documenting real market experiments through code, data, and storytelling.
+            </div>
+            <div class="cta-buttons">
+                <a href="#systems" class="btn btn-primary">View Trading Systems</a>
+                <a href="#stories" class="btn btn-secondary">Read Insights & Stories</a>
+                <a href="#proof" class="btn btn-secondary">See Proof</a>
             </div>
         </div>
     </section>
 
-    <!-- About Me Section -->
-    <section class="section" id="about">
+    <!-- Proof Section -->
+    <section class="section" id="proof" style="background: rgba(15, 23, 42, 0.3);">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Passion for AI & Automation</h3>
-                    <p>I'm a software engineer with a deep passion for algorithmic trading and financial technology. My journey began with a fascination for computer science and evolved into building intelligent systems that automate trading across multiple platforms.</p>
-                    <p>I specialize in developing AI-powered trading infrastructure, quantitative signal analytics, and robust automation systems that execute with precision and scale.</p>
-                    <p>Beyond trading systems, I'm a technical content creator, sharing knowledge about trading strategies, market structure, and software engineering through detailed articles and tutorials.</p>
+            <h2 class="section-title">Proof & Infrastructure</h2>
+            <p class="section-subtitle">Real trading systems, backtests, and system architecture. Building trust through transparency.</p>
+            <div class="proof-grid">
+                <div class="proof-card">
+                    <img src="assets/proof/quant-terminal.jpg" alt="Quant Terminal" class="proof-image">
+                    <div class="proof-info">
+                        <h3>System Architecture</h3>
+                        <p>Real-time multi-market execution and data pipeline architecture for algorithmic trading.</p>
+                    </div>
                 </div>
-                <div>
-                    <h3 style="font-family: 'Syne', sans-serif; font-size: 1.8rem; margin-bottom: 2rem; color: white;">Core Expertise</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">🤖 AI Trading Bots</div>
-                        <div class="skill-item">📊 Quantitative Analysis</div>
-                        <div class="skill-item">🐍 Python Development</div>
-                        <div class="skill-item">📈 Strategy Optimization</div>
-                        <div class="skill-item">🔗 API Integration</div>
-                        <div class="skill-item">💡 Risk Management</div>
-                        <div class="skill-item">📱 Full-Stack Dev</div>
-                        <div class="skill-item">🎓 Technical Writing</div>
+                <div class="proof-card">
+                    <img src="assets/proof/mt5-execution.png" alt="MT5 Execution" class="proof-image">
+                    <div class="proof-info">
+                        <h3>Live Execution Logs</h3>
+                        <p>MetaTrader 5 Expert Advisor execution showing real trades, position management, and signal processing.</p>
+                    </div>
+                </div>
+                <div class="proof-card">
+                    <img src="assets/proof/bot-terminal.png" alt="Bot Terminal" class="proof-image">
+                    <div class="proof-info">
+                        <h3>Python Trading Engine</h3>
+                        <p>Deep system logs from our Python-based execution engine showing millisecond decision-making.</p>
+                    </div>
+                </div>
+                <div class="proof-card">
+                    <img src="assets/proof/backtest-1.png" alt="Backtesting" class="proof-image">
+                    <div class="proof-info">
+                        <h3>Backtest Results</h3>
+                        <p>Walk-forward analysis and Monte Carlo simulations validating strategy robustness across market regimes.</p>
+                    </div>
+                </div>
+                <div class="proof-card">
+                    <img src="assets/proof/api-logs.jpg" alt="API Logs" class="proof-image">
+                    <div class="proof-info">
+                        <h3>Signal Analytics</h3>
+                        <p>Data pipeline visualization from raw market feeds to actionable trading signals.</p>
+                    </div>
+                </div>
+                <div class="proof-card">
+                    <img src="assets/proof/dashboard.png" alt="Dashboard" class="proof-image">
+                    <div class="proof-info">
+                        <h3>Risk Dashboard</h3>
+                        <p>Real-time monitoring of portfolio risk metrics, drawdown protection, and capital allocation.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Platforms Section -->
-    <section class="section" id="platforms" style="background: rgba(15, 23, 42, 0.3);">
-        <div class="container">
-            <h2 class="section-title">Platforms We Build Trading Systems For</h2>
-            <p class="section-subtitle">Developing AI-powered trading infrastructure and automation systems across leading platforms.</p>
-            <div class="platforms-grid">
-                <div class="platform-card">
-                    <img src="assets/logos/deriv.jpg" alt="Deriv" class="platform-logo">
-                    <h3>Deriv</h3>
-                    <p>AI-powered synthetic indices bots and automation systems.</p>
-                </div>
-                <div class="platform-card">
-                    <img src="assets/logos/binance.png" alt="Binance" class="platform-logo">
-                    <h3>Binance</h3>
-                    <p>Crypto trading bots, signal systems, and API integrations.</p>
-                </div>
-                <div class="platform-card">
-                    <img src="assets/logos/bybit.jpg" alt="Bybit" class="platform-logo">
-                    <h3>Bybit</h3>
-                    <p>High-frequency trading bots and derivatives automation.</p>
-                </div>
-                <div class="platform-card">
-                    <img src="assets/logos/mt5.png" alt="MetaTrader 5" class="platform-logo">
-                    <h3>MetaTrader 5</h3>
-                    <p>MQL5 expert advisors and custom indicator development.</p>
-                </div>
-                <div class="platform-card">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/TradingView_logo.svg" alt="TradingView" class="platform-logo">
-                    <h3>TradingView</h3>
-                    <p>Custom Pine Script indicators and signal systems.</p>
-                </div>
-                <div class="platform-card">
-                    <img src="assets/logos/exness.png" alt="Exness" class="platform-logo">
-                    <h3>Exness</h3>
-                    <p>Multi-asset trading automation and social trading solutions.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Systems We Develop Section -->
+    <!-- Systems Section -->
     <section class="section" id="systems">
         <div class="container">
-            <h2 class="section-title">Systems We Develop</h2>
-            <p class="section-subtitle">Comprehensive trading infrastructure and automation solutions.</p>
-            <div class="systems-grid">
-                <div class="system-card">
-                    <h3>AI Trading Bots</h3>
-                    <p>Automated execution systems using Python and APIs. Machine learning-powered signal generation with real-time market adaptation.</p>
-                </div>
-                <div class="system-card">
-                    <h3>Synthetic Indices Bots</h3>
-                    <p>Advanced systems for volatility and synthetic markets. Optimized for high-frequency execution and risk management.</p>
-                </div>
-                <div class="system-card">
-                    <h3>Signal Analytics</h3>
-                    <p>AI-powered signal generation and market analysis. Quantitative signal analytics for multi-timeframe trading strategies.</p>
-                </div>
-                <div class="system-card">
-                    <h3>Risk Management Engine</h3>
-                    <p>Automated stop-loss and capital protection systems. Portfolio-level risk optimization and drawdown control.</p>
-                </div>
-                <div class="system-card">
-                    <h3>Backtesting Infrastructure</h3>
-                    <p>Walk-forward analysis and Monte Carlo simulations. Strategy validation and performance metrics across market regimes.</p>
-                </div>
-                <div class="system-card">
-                    <h3>Trading APIs</h3>
-                    <p>Custom API solutions for data integration and order execution. Direct market access (DMA) and low-latency connectivity.</p>
-                </div>
-                <div class="system-card">
-                    <h3>Pine Script Indicators</h3>
-                    <p>Advanced TradingView indicators and strategy scripts. Custom technical analysis tools for professional traders.</p>
-                </div>
-                <div class="system-card">
-                    <h3>Forex Automation</h3>
-                    <p>Specialized systems for currency markets. Multi-pair correlation analysis and hedging strategies.</p>
+            <h2 class="section-title">Trading Systems & Infrastructure</h2>
+            <p class="section-subtitle">Categorized by function and market application. All systems built with Python, APIs, and institutional-grade standards.</p>
+            
+            <div style="margin-bottom: 4rem;">
+                <h3 style="font-family: 'Syne', sans-serif; font-size: 1.8rem; margin-bottom: 2rem; color: var(--accent); text-align: center;">Trading Bot Systems</h3>
+                <div class="systems-grid">
+                    <div class="system-card">
+                        <h3>AI Trading Bots</h3>
+                        <p>Automated execution systems using Python and APIs. Machine learning-powered signal generation with real-time market adaptation.</p>
+                    </div>
+                    <div class="system-card">
+                        <h3>Synthetic Indices Bots</h3>
+                        <p>Advanced systems for volatility and synthetic markets. Optimized for high-frequency execution and risk management.</p>
+                    </div>
+                    <div class="system-card">
+                        <h3>Forex Automation</h3>
+                        <p>Specialized systems for currency markets. Multi-pair correlation analysis and hedging strategies.</p>
+                    </div>
                 </div>
             </div>
 
-            <!-- Live Market Widgets -->
-            <div class="live-widgets" style="margin-top: 4rem;">
+            <div style="margin-bottom: 4rem;">
+                <h3 style="font-family: 'Syne', sans-serif; font-size: 1.8rem; margin-bottom: 2rem; color: var(--accent); text-align: center;">Probability Models & Analytics</h3>
+                <div class="systems-grid">
+                    <div class="system-card">
+                        <h3>Signal Generation</h3>
+                        <p>AI-powered signal generation and market analysis. Quantitative signal analytics for multi-timeframe trading strategies.</p>
+                    </div>
+                    <div class="system-card">
+                        <h3>Backtesting Infrastructure</h3>
+                        <p>Walk-forward analysis and Monte Carlo simulations. Strategy validation and performance metrics across market regimes.</p>
+                    </div>
+                    <div class="system-card">
+                        <h3>Pine Script Indicators</h3>
+                        <p>Advanced TradingView indicators and strategy scripts. Custom technical analysis tools for professional traders.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 style="font-family: 'Syne', sans-serif; font-size: 1.8rem; margin-bottom: 2rem; color: var(--accent); text-align: center;">Risk Management Logic</h3>
+                <div class="systems-grid">
+                    <div class="system-card">
+                        <h3>Risk Management Engine</h3>
+                        <p>Automated stop-loss and capital protection systems. Portfolio-level risk optimization and drawdown control.</p>
+                    </div>
+                    <div class="system-card">
+                        <h3>Data Collection Pipelines</h3>
+                        <p>Real-time market data aggregation and normalization. Multi-source feed integration and quality assurance.</p>
+                    </div>
+                    <div class="system-card">
+                        <h3>Trading APIs</h3>
+                        <p>Custom API solutions for data integration and order execution. Direct market access (DMA) and low-latency connectivity.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Live Market Widget -->
+            <div style="margin-top: 4rem;">
                 <h3 style="text-align: center; margin-bottom: 2rem; color: white; font-family: 'Syne', sans-serif;">Live Market Data</h3>
                 <div class="tradingview-widget-container">
                     <div class="tradingview-widget-container__widget"></div>
@@ -691,7 +621,6 @@
                     {
                     "symbols": [
                         { "proName": "FOREXCOM:SPX500", "title": "S&P 500" },
-                        { "proName": "FOREXCOM:NSXUSD", "title": "US Tech 100" },
                         { "proName": "FX_IDC:EURUSD", "title": "EUR/USD" },
                         { "proName": "BITSTAMP:BTCUSD", "title": "Bitcoin" },
                         { "proName": "BITSTAMP:ETHUSD", "title": "Ethereum" }
@@ -704,124 +633,52 @@
                     }
                     </script>
                 </div>
-
-                <div class="tradingview-widget-container" style="height: 500px; margin-top: 2rem; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(59, 130, 246, 0.2);">
-                    <div id="tradingview_advanced_chart" style="height: 100%;" ></div>
-                    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-                    <script type="text/javascript">
-                    new TradingView.widget(
-                    {
-                    "autosize": true,
-                    "symbol": "BINANCE:BTCUSDT",
-                    "interval": "D",
-                    "timezone": "Etc/UTC",
-                    "theme": "dark",
-                    "style": "1",
-                    "locale": "en",
-                    "toolbar_bg": "#f1f3f6",
-                    "enable_publishing": false,
-                    "hide_side_toolbar": false,
-                    "allow_symbol_change": true,
-                    "container_id": "tradingview_advanced_chart"
-                    }
-                    );
-                    </script>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Visual Proof Section -->
-    <section class="section" id="proof" style="background: rgba(15, 23, 42, 0.3);">
+    <!-- Stories Section -->
+    <section class="section" id="stories" style="background: rgba(15, 23, 42, 0.3);">
         <div class="container">
-            <h2 class="section-title">System Visual Proof & Infrastructure</h2>
-            <p class="section-subtitle">Real-world screenshots showcasing our trading systems in action.</p>
-            <div class="proof-grid">
-                <div class="proof-card">
-                    <img src="assets/proof/quant-terminal.jpg" alt="Quant Terminal" class="proof-image">
-                    <div class="proof-info">
-                        <h3>Institutional Quant Terminal</h3>
-                        <p>High-fidelity data visualization and multi-market order flow analysis.</p>
+            <h2 class="section-title">Financial System Storytelling</h2>
+            <p class="section-subtitle">Narrative-driven exploration of financial systems, market mechanics, and the intersection of technology and trading.</p>
+            <div class="stories-grid">
+                <div class="story-card">
+                    <div class="story-header">
+                        <h3>The Job That Doesn't Exist</h3>
+                    </div>
+                    <div class="story-body">
+                        <p>A narrative exploration of building trading systems and the journey of creating a career at the intersection of finance, technology, and automation.</p>
+                        <a href="https://github.com/maitethialeakey-droid/leakey-personal-brand" class="story-link">Explore Story →</a>
                     </div>
                 </div>
-                <div class="proof-card">
-                    <img src="assets/proof/mt5-execution.png" alt="MT5 Execution" class="proof-image">
-                    <div class="proof-info">
-                        <h3>Automated MT5 Execution</h3>
-                        <p>Live Expert Advisor logs showing real-time trade execution and signal processing.</p>
+                <div class="story-card">
+                    <div class="story-header">
+                        <h3>Market Mechanics</h3>
+                    </div>
+                    <div class="story-body">
+                        <p>Deep dives into how financial markets work, order flow analysis, and the hidden systems that drive price discovery and volatility.</p>
+                        <a href="https://github.com/maitethialeakey-droid/leakey-personal-brand" class="story-link">Explore Story →</a>
                     </div>
                 </div>
-                <div class="proof-card">
-                    <img src="assets/proof/bot-terminal.png" alt="Bot Terminal" class="proof-image">
-                    <div class="proof-info">
-                        <h3>AI Execution Engine Logs</h3>
-                        <p>Deep-level system logs from our Python-based AI execution engine.</p>
+                <div class="story-card">
+                    <div class="story-header">
+                        <h3>Building Systems</h3>
                     </div>
-                </div>
-                <div class="proof-card">
-                    <img src="assets/proof/api-logs.jpg" alt="API Logs" class="proof-image">
-                    <div class="proof-info">
-                        <h3>Real-time Signal Analytics</h3>
-                        <p>Data pipeline visualization from raw market feeds to actionable signals.</p>
-                    </div>
-                </div>
-                <div class="proof-card">
-                    <img src="assets/proof/backtest-1.png" alt="Backtesting" class="proof-image">
-                    <div class="proof-info">
-                        <h3>Strategy Backtesting</h3>
-                        <p>Walk-forward analysis and Monte Carlo simulations for robust performance validation.</p>
-                    </div>
-                </div>
-                <div class="proof-card">
-                    <img src="assets/proof/dashboard.png" alt="Dashboard" class="proof-image">
-                    <div class="proof-info">
-                        <h3>Risk Management Dashboard</h3>
-                        <p>Real-time monitoring of risk metrics and portfolio performance.</p>
+                    <div class="story-body">
+                        <p>Chronicles of engineering trading infrastructure, lessons learned from live trading, and the art of building resilient automated systems.</p>
+                        <a href="https://github.com/maitethialeakey-droid/leakey-personal-brand" class="story-link">Explore Story →</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section class="section" id="projects">
+    <!-- Insights Section -->
+    <section class="section" id="insights">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <p class="section-subtitle">Open-source and professional trading systems on GitHub.</p>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-img">🤖</div>
-                    <div class="project-info">
-                        <h3>Strategy Optimization Engine</h3>
-                        <p>Advanced Python framework for genetic algorithm strategy optimization and walk-forward analysis.</p>
-                        <a href="https://github.com/maitethialeakey-droid/leakey-personal-brand" class="github-link">View Repository →</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-img">📊</div>
-                    <div class="project-info">
-                        <h3>Sentiment Analysis Bot</h3>
-                        <p>Real-time NLP engine processing news and social sentiment for market direction forecasting.</p>
-                        <a href="https://github.com/maitethialeakey-droid/leakey-personal-brand" class="github-link">View Repository →</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-img">⚙️</div>
-                    <div class="project-info">
-                        <h3>Portfolio Risk Manager</h3>
-                        <p>Multi-asset risk management system with automated position sizing and drawdown protection.</p>
-                        <a href="https://github.com/maitethialeakey-droid/leakey-personal-brand" class="github-link">View Repository →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Articles Section -->
-    <section class="section" id="articles" style="background: rgba(15, 23, 42, 0.3);">
-        <div class="container">
-            <h2 class="section-title">Trading & Technology Articles</h2>
-            <p class="section-subtitle">In-depth guides on trading strategies, technical analysis, and software engineering.</p>
+            <h2 class="section-title">Trading Insights & Technical Articles</h2>
+            <p class="section-subtitle">In-depth guides on trading strategies, market structure, and system architecture.</p>
             <div class="articles-grid">
                 <div class="article-card">
                     <div class="article-header">
@@ -843,7 +700,7 @@
                 </div>
                 <div class="article-card">
                     <div class="article-header">
-                        <h3>TradingView Indicator Guide</h3>
+                        <h3>TradingView Indicators</h3>
                     </div>
                     <div class="article-body">
                         <p>Advanced techniques for creating custom Pine Script indicators and automated strategies.</p>
@@ -884,17 +741,34 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <span class="footer-logo">Leakey Maitethia</span>
-            <p style="color: var(--text-muted); margin-bottom: 1rem;">AI Trading Systems Developer | Algorithmic Trader | Software Engineer</p>
-            <ul class="footer-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#platforms">Platforms</a></li>
-                <li><a href="#systems">Systems</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="https://github.com/maitethialeakey-droid">GitHub</a></li>
-            </ul>
-            <p class="copyright">&copy; 2026 Leakey Maitethia. All rights reserved.</p>
+            <div class="disclaimer">
+                <strong>⚠️ Trading Disclaimer:</strong> All trading systems, backtests, and strategies documented here are for educational purposes only. Past performance does not guarantee future results. Trading and investing involve substantial risk of loss. Always conduct your own research and consult with financial professionals before making investment decisions. Leakey Labs does not provide financial advice.
+            </div>
+
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About Leakey Labs</h4>
+                    <p>Building algorithmic trading systems, probability models, and financial narratives. Documenting real market experiments through code, data, and storytelling.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <p><a href="#home">Home</a></p>
+                    <p><a href="#proof">Proof & Infrastructure</a></p>
+                    <p><a href="#systems">Trading Systems</a></p>
+                    <p><a href="#stories">Stories</a></p>
+                    <p><a href="#insights">Insights</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <p><a href="https://github.com/maitethialeakey-droid">GitHub</a></p>
+                    <p><a href="mailto:contact@leakeylabs.com">Email</a></p>
+                    <p><a href="https://twitter.com">Twitter/X</a></p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Leakey Labs. All rights reserved. | Algorithmic Trader | System Builder | Digital Story Developer</p>
+            </div>
         </div>
     </footer>
 
