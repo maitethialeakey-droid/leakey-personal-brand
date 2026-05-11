@@ -404,27 +404,34 @@
     <!-- Visual Proof Section -->
     <section class="section" id="proof" style="background: #0a0f1a;">
         <div class="container">
-            <h2 class="section-title">System Visual Proof & Analytics</h2>
+            <h2 class="section-title">System Visual Proof & Infrastructure</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <img src="assets/proof/dashboard.png" alt="Quant Dashboard" style="width: 100%; height: 250px; object-fit: cover;">
+                    <img src="assets/proof/quant-terminal.jpg" alt="Quant Terminal" style="width: 100%; height: 250px; object-fit: cover;">
                     <div class="project-info">
-                        <h3>Institutional Quant Dashboard</h3>
-                        <p>Real-time monitoring of multi-asset execution, risk metrics, and alpha generation across global exchanges.</p>
+                        <h3>Institutional Quant Terminal</h3>
+                        <p>High-fidelity data visualization and multi-market order flow analysis for institutional-grade alpha generation.</p>
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="assets/proof/backtest-1.png" alt="Backtesting Results" style="width: 100%; height: 250px; object-fit: cover;">
+                    <img src="assets/proof/mt5-execution.png" alt="MT5 Execution" style="width: 100%; height: 250px; object-fit: cover;">
                     <div class="project-info">
-                        <h3>Strategy Backtesting Reports</h3>
-                        <p>Rigorous walk-forward analysis and Monte Carlo simulations ensuring robust strategy performance in all market regimes.</p>
+                        <h3>Automated MT5 Execution</h3>
+                        <p>Live MetaTrader 5 Expert Advisor logs showing real-time trade execution, position management, and signal processing.</p>
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="assets/proof/code-terminal.png" alt="Code Terminal" style="width: 100%; height: 250px; object-fit: cover;">
+                    <img src="assets/proof/bot-terminal.png" alt="Bot Terminal" style="width: 100%; height: 250px; object-fit: cover;">
                     <div class="project-info">
-                        <h3>High-Frequency Execution Engine</h3>
-                        <p>Low-latency Python/C++ core designed for millisecond execution and direct market access (DMA).</p>
+                        <h3>AI Execution Engine Logs</h3>
+                        <p>Deep-level system logs from our Python-based AI execution engine, showcasing millisecond decision-making and API stability.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="assets/proof/api-logs.jpg" alt="API Logs" style="width: 100%; height: 250px; object-fit: cover;">
+                    <div class="project-info">
+                        <h3>Real-time Signal Analytics</h3>
+                        <p>Visualizing the data pipeline from raw market feeds to actionable signals via our proprietary analytics framework.</p>
                     </div>
                 </div>
             </div>
@@ -474,7 +481,7 @@
         </div>
     </section>
 
-    <section class="section" id="systems" style="background: rgba(30, 41, 59, 0.3);">
+    <section class="section" id="systems" style="background: rgba(15, 23, 42, 0.5);">
         <div class="container">
             <h2 class="section-title">Systems We Develop</h2>
             <div class="systems-list">
@@ -489,7 +496,7 @@
             </div>
 
             <div class="live-widgets">
-                <!-- TradingView Widget BEGIN -->
+                <!-- TradingView Ticker BEGIN -->
                 <div class="tradingview-widget-container">
                     <div class="tradingview-widget-container__widget"></div>
                     <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
@@ -509,7 +516,30 @@
                     }
                     </script>
                 </div>
-                <!-- TradingView Widget END -->
+                <!-- TradingView Ticker END -->
+
+                <!-- TradingView Chart BEGIN -->
+                <div class="tradingview-widget-container" style="height: 600px; margin-top: 2rem; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(59, 130, 246, 0.2);">
+                    <div id="tradingview_advanced_chart" style="height: 100%;"></div>
+                    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                    <script type="text/javascript">
+                    new TradingView.widget({
+                        "autosize": true,
+                        "symbol": "BINANCE:BTCUSDT",
+                        "interval": "D",
+                        "timezone": "Etc/UTC",
+                        "theme": "dark",
+                        "style": "1",
+                        "locale": "en",
+                        "toolbar_bg": "#f1f3f6",
+                        "enable_publishing": false,
+                        "hide_side_toolbar": false,
+                        "allow_symbol_change": true,
+                        "container_id": "tradingview_advanced_chart"
+                    });
+                    </script>
+                </div>
+                <!-- TradingView Chart END -->
             </div>
         </div>
     </section>
