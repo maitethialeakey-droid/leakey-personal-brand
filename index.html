@@ -14,11 +14,12 @@
         :root {
             --primary: #3b82f6;
             --secondary: #8b5cf6;
-            --bg-dark: #0f172a;
-            --bg-card: rgba(30, 41, 59, 0.8);
+            --bg-dark: #070b14;
+            --bg-card: rgba(15, 23, 42, 0.8);
             --text-main: #e2e8f0;
             --text-muted: #94a3b8;
             --accent: #60a5fa;
+            --glow: 0 0 20px rgba(59, 130, 246, 0.3);
         }
 
         * {
@@ -122,13 +123,16 @@
 
         .hero-content h1 {
             font-family: 'Syne', sans-serif;
-            font-size: 4rem;
+            font-size: 5rem;
             font-weight: 800;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #fff 0%, #60a5fa 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-transform: uppercase;
+            letter-spacing: -2px;
         }
 
         .hero-content p {
@@ -384,11 +388,44 @@
         <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content">
-                <h1>Next-Gen AI Trading Systems</h1>
-                <p>Architecting high-performance quant systems, AI execution engines, and robust trading infrastructure for the modern financial markets.</p>
+                <div style="display: inline-block; padding: 0.5rem 1.5rem; background: rgba(59, 130, 246, 0.1); border: 1px solid var(--primary); border-radius: 2rem; color: var(--primary); font-weight: 700; font-size: 0.9rem; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 2px;">
+                    Institutional AI Infrastructure
+                </div>
+                <h1>AI Trading Systems & Automation</h1>
+                <p>Building intelligent bots and high-frequency execution engines for Forex, Crypto, and Synthetic Markets. Engineered for scale, precision, and performance.</p>
                 <div class="cta-buttons">
-                    <a href="#projects" class="btn btn-primary">View Infrastructure</a>
-                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                    <a href="#projects" class="btn btn-primary">Explore Systems</a>
+                    <a href="#proof" class="btn btn-secondary">View Visual Proof</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Proof Section -->
+    <section class="section" id="proof" style="background: #0a0f1a;">
+        <div class="container">
+            <h2 class="section-title">System Visual Proof & Analytics</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="assets/proof/dashboard.png" alt="Quant Dashboard" style="width: 100%; height: 250px; object-fit: cover;">
+                    <div class="project-info">
+                        <h3>Institutional Quant Dashboard</h3>
+                        <p>Real-time monitoring of multi-asset execution, risk metrics, and alpha generation across global exchanges.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="assets/proof/backtest-1.png" alt="Backtesting Results" style="width: 100%; height: 250px; object-fit: cover;">
+                    <div class="project-info">
+                        <h3>Strategy Backtesting Reports</h3>
+                        <p>Rigorous walk-forward analysis and Monte Carlo simulations ensuring robust strategy performance in all market regimes.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="assets/proof/code-terminal.png" alt="Code Terminal" style="width: 100%; height: 250px; object-fit: cover;">
+                    <div class="project-info">
+                        <h3>High-Frequency Execution Engine</h3>
+                        <p>Low-latency Python/C++ core designed for millisecond execution and direct market access (DMA).</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -477,12 +514,37 @@
         </div>
     </section>
 
+    <!-- Trading Tutorials Section -->
+    <section class="section" id="tutorials" style="background: rgba(15, 23, 42, 0.5);">
+        <div class="container">
+            <h2 class="section-title">Trading Technology Tutorials</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000;">
+                        <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="project-info">
+                        <h3>Building AI Trading Bots</h3>
+                        <p>A deep dive into architecting automated systems using Python and machine learning libraries.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="assets/proof/signal-charts.jpg" alt="Signal Charts" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="project-info">
+                        <h3>Pine Script Mastery</h3>
+                        <p>Advanced techniques for creating high-precision TradingView indicators and strategy scripts.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="section" id="projects">
         <div class="container">
             <h2 class="section-title">Quant Infrastructure Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <div class="project-img">AI EXECUTION</div>
+                    <img src="assets/proof/backtest-2.webp" alt="Optimization Engine" style="width: 100%; height: 200px; object-fit: cover;">
                     <div class="project-info">
                         <h3>Strategy Optimization Engine</h3>
                         <p>Advanced Python-based framework for genetic algorithm strategy optimization and walk-forward analysis.</p>
@@ -490,7 +552,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-img">SIGNAL ANALYTICS</div>
+                    <img src="assets/proof/ui-design.png" alt="Sentiment Analysis" style="width: 100%; height: 200px; object-fit: cover;">
                     <div class="project-info">
                         <h3>Sentiment Analysis Bot</h3>
                         <p>Real-time NLP engine processing news and social sentiment for crypto market direction forecasting.</p>
