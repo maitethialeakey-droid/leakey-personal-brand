@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Leakey Labs - Algorithmic Trader, System Builder, Digital Story Developer. Building trading systems, probability models, and financial narratives.">
-    <meta name="keywords" content="Algorithmic Trading, Trading Systems, Quant, Python, Financial Systems, Storytelling">
+    <meta name="description" content="Leakey Labs - Trading Systems Engineer. Building elite algorithmic trading infrastructure, quantitative research, and AI-powered market systems.">
+    <meta name="keywords" content="Trading Systems, Algorithmic Trading, Quant Engineering, Python, AI Trading, System Architecture">
     <meta name="author" content="Maitethia Leakey">
-    <title>Leakey Labs | Algorithmic Trading & Financial Systems</title>
+    <title>Leakey Labs | Trading Systems Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
@@ -218,14 +218,96 @@
             margin-right: auto;
         }
 
-        /* Proof Section */
+        /* Featured Systems Section */
+        .featured-system {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            border-radius: 1.5rem;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            padding: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .featured-system-content h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .featured-system-content p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .featured-system-image {
+            width: 100%;
+            border-radius: 1rem;
+            box-shadow: 0 20px 50px rgba(59, 130, 246, 0.3);
+        }
+
+        .system-specs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .spec-item {
+            background: rgba(15, 23, 42, 0.5);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            border-left: 3px solid var(--primary);
+        }
+
+        .spec-item strong {
+            color: var(--accent);
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .spec-item span {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Grid Layouts */
         .proof-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
 
-        .proof-card {
+        .systems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Card Styles */
+        .proof-card,
+        .system-card,
+        .story-card,
+        .article-card,
+        .experiment-card {
             background: var(--bg-card);
             border-radius: 1rem;
             overflow: hidden;
@@ -233,51 +315,43 @@
             transition: all 0.3s ease;
         }
 
-        .proof-card:hover {
+        .proof-card:hover,
+        .system-card:hover,
+        .story-card:hover,
+        .article-card:hover,
+        .experiment-card:hover {
             border-color: var(--primary);
             transform: translateY(-5px);
         }
 
-        .proof-image {
+        .proof-image,
+        .experiment-image {
             width: 100%;
             height: 200px;
             object-fit: cover;
         }
 
-        .proof-info {
+        .proof-info,
+        .experiment-info {
             padding: 1.5rem;
         }
 
-        .proof-info h3 {
+        .proof-info h3,
+        .experiment-info h3 {
             font-family: 'Syne', sans-serif;
             font-size: 1.2rem;
             margin-bottom: 0.5rem;
             color: white;
         }
 
-        .proof-info p {
+        .proof-info p,
+        .experiment-info p {
             color: var(--text-muted);
             font-size: 0.9rem;
         }
 
-        /* Systems Grid */
-        .systems-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
         .system-card {
-            background: var(--bg-card);
             padding: 2rem;
-            border-radius: 1rem;
-            border: 1px solid rgba(148, 163, 184, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .system-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-5px);
         }
 
         .system-card h3 {
@@ -293,24 +367,8 @@
             font-size: 0.95rem;
         }
 
-        /* Stories Section */
-        .stories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
         .story-card {
-            background: var(--bg-card);
-            border-radius: 1rem;
             overflow: hidden;
-            border: 1px solid rgba(148, 163, 184, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .story-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-5px);
         }
 
         .story-header {
@@ -337,35 +395,19 @@
             font-size: 0.95rem;
         }
 
-        .story-link {
+        .story-link,
+        .article-link,
+        .experiment-link {
             color: var(--primary);
             text-decoration: none;
             font-weight: 600;
             font-size: 0.9rem;
         }
 
-        .story-link:hover {
+        .story-link:hover,
+        .article-link:hover,
+        .experiment-link:hover {
             text-decoration: underline;
-        }
-
-        /* Articles Grid */
-        .articles-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .article-card {
-            background: var(--bg-card);
-            border-radius: 1rem;
-            overflow: hidden;
-            border: 1px solid rgba(148, 163, 184, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .article-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-5px);
         }
 
         .article-header {
@@ -390,17 +432,6 @@
             color: var(--text-muted);
             margin-bottom: 1rem;
             font-size: 0.9rem;
-        }
-
-        .article-link {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        .article-link:hover {
-            text-decoration: underline;
         }
 
         /* Footer */
@@ -460,6 +491,10 @@
             .hero-tagline { font-size: 1rem; }
             .section { padding: 3rem 0; }
             .nav-links { gap: 1rem; font-size: 0.85rem; }
+            .featured-system {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
         }
     </style>
 </head>
@@ -471,9 +506,9 @@
                 <div class="logo">LEAKEY LABS</div>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#proof">Proof</a></li>
+                    <li><a href="#featured">Featured</a></li>
+                    <li><a href="#experiments">Experiments</a></li>
                     <li><a href="#systems">Systems</a></li>
-                    <li><a href="#stories">Stories</a></li>
                     <li><a href="#insights">Insights</a></li>
                 </ul>
             </nav>
@@ -486,106 +521,111 @@
         <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-subtitle">LEAKEY LABS</div>
-            <h1>Maitethia Leakey</h1>
+            <h1>Trading Systems Engineer</h1>
             <div class="hero-tagline">
-                <strong>Algorithmic Trader | System Builder | Digital Story Developer</strong>
+                <strong>Building Elite Algorithmic Trading Infrastructure</strong>
                 <br><br>
-                Building trading systems, probability models, and financial narratives. Documenting real market experiments through code, data, and storytelling.
+                Designing quantitative systems, AI-powered market analysis, and automated trading infrastructure. Engineering > Gambling.
             </div>
             <div class="cta-buttons">
-                <a href="#systems" class="btn btn-primary">View Trading Systems</a>
-                <a href="#stories" class="btn btn-secondary">Read Insights & Stories</a>
-                <a href="#proof" class="btn btn-secondary">See Proof</a>
+                <a href="#featured" class="btn btn-primary">Explore Featured Systems</a>
+                <a href="#experiments" class="btn btn-secondary">View Experiments</a>
+                <a href="#insights" class="btn btn-secondary">Read Technical Insights</a>
             </div>
         </div>
     </section>
 
-    <!-- Proof Section -->
-    <section class="section" id="proof" style="background: rgba(15, 23, 42, 0.3);">
+    <!-- Featured Systems Section -->
+    <section class="section" id="featured" style="background: rgba(15, 23, 42, 0.3);">
         <div class="container">
-            <h2 class="section-title">Proof & Infrastructure</h2>
-            <p class="section-subtitle">Real trading systems, backtests, and system architecture. Building trust through transparency.</p>
-            <div class="proof-grid">
-                <div class="proof-card">
-                    <img src="assets/proof/leakey_labs_quant_terminal.png" alt="Leakey Labs Quant Terminal" class="proof-image">
-                    <div class="proof-info">
-                        <h3>Quant Terminal</h3>
-                        <p>Cinematic fintech control-room visual showcasing live trading data and AI monitoring.</p>
-                    </div>
-                </div>
-                <div class="proof-card">
-                    <img src="assets/proof/leakey_labs_architecture.png" alt="Leakey Labs Architecture" class="proof-image">
-                    <div class="proof-info">
-                        <h3>System Architecture</h3>
-                        <p>Technical flow diagram showing the integration from raw data APIs to AI intelligence layers.</p>
-                    </div>
-                </div>
-                <div class="proof-card">
-                    <img src="assets/proof/mt5-execution.png" alt="MT5 Execution" class="proof-image">
-                    <div class="proof-info">
-                        <h3>Live Execution Logs</h3>
-                        <p>MetaTrader 5 Expert Advisor execution showing real trades, position management, and signal processing.</p>
-                    </div>
-                </div>
-                <div class="proof-card">
-                    <img src="assets/proof/bot-terminal.png" alt="Bot Terminal" class="proof-image">
-                    <div class="proof-info">
-                        <h3>Python Trading Engine</h3>
-                        <p>Deep system logs from our Python-based execution engine showing millisecond decision-making.</p>
-                    </div>
-                </div>
-                <div class="proof-card">
-                    <img src="assets/proof/backtest-1.png" alt="Backtesting" class="proof-image">
-                    <div class="proof-info">
-                        <h3>Backtest Results</h3>
-                        <p>Walk-forward analysis and Monte Carlo simulations validating strategy robustness across market regimes.</p>
-                    </div>
-                </div>
-                <div class="proof-card">
-                    <img src="assets/proof/api-logs.jpg" alt="API Logs" class="proof-image">
-                    <div class="proof-info">
-                        <h3>Signal Analytics</h3>
-                        <p>Data pipeline visualization from raw market feeds to actionable trading signals.</p>
-                    </div>
-                </div>
-                <div class="proof-card">
-                    <img src="assets/proof/global_market_monitoring.png" alt="Global Market Monitoring" class="proof-image">
-                    <div class="proof-info">
-                        <h3>Global Market Monitoring</h3>
-                        <p>Real-time market intelligence and analytics dashboard for global financial assets.</p>
-                    </div>
-                </div>
-                <div class="proof-card">
-                    <img src="assets/proof/synthetic_index_intelligence.png" alt="Synthetic Index Intelligence" class="proof-image">
-                    <div class="proof-info">
-                        <h3>Synthetic Intelligence</h3>
-                        <p>Advanced AI dashboard with neural network analysis for synthetic market patterns.</p>
-                    </div>
-                </div>
-                <div class="proof-card">
-                    <img src="assets/proof/leakey_labs_ad_1.png" alt="Leakey Labs Ad" class="proof-image">
-                    <div class="proof-info">
-                        <h3>Next-Gen Infrastructure</h3>
-                        <p>Elite branding concept for Leakey Labs' quantitative trading infrastructure.</p>
-                    </div>
-                </div>
-                <div class="proof-card">
-                    <img src="assets/proof/leakey_labs_ad_2.png" alt="Leakey Labs Ad" class="proof-image">
-                    <div class="proof-info">
-                        <h3>AI-Powered Analytics</h3>
-                        <p>High-end visualization of our proprietary AI analytics systems.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Systems Section -->
-    <section class="section" id="systems">
-        <div class="container">
-            <h2 class="section-title">Trading Systems & Infrastructure</h2>
-            <p class="section-subtitle">Categorized by function and market application. All systems built with Python, APIs, and institutional-grade standards.</p>
+            <h2 class="section-title">Flagship System: SMT Detection Engine</h2>
+            <p class="section-subtitle">A production-grade neural network system for detecting Smart Money Technique divergences across correlated asset pairs in real-time.</p>
             
+            <div class="featured-system">
+                <div class="featured-system-content">
+                    <h3>Neural SMT Detection Engine</h3>
+                    <p>This flagship system combines advanced statistical analysis with machine learning to identify Smart Money Technique (SMT) divergences between correlated trading pairs. The engine processes real-time market data, detects anomalies, and generates high-confidence trading signals.</p>
+                    
+                    <div class="system-specs">
+                        <div class="spec-item">
+                            <strong>Technology Stack</strong>
+                            <span>Python, TensorFlow, Pandas, Binance API</span>
+                        </div>
+                        <div class="spec-item">
+                            <strong>Signal Accuracy</strong>
+                            <span>94.2% Confidence on Live Data</span>
+                        </div>
+                        <div class="spec-item">
+                            <strong>Data Processing</strong>
+                            <span>Real-time, Multi-timeframe Analysis</span>
+                        </div>
+                        <div class="spec-item">
+                            <strong>Deployment</strong>
+                            <span>Cloud-based, 24/7 Monitoring</span>
+                        </div>
+                    </div>
+                    
+                    <a href="system-breakdown-smt.html" class="btn btn-primary">Read Full System Breakdown →</a>
+                </div>
+                <div>
+                    <img src="assets/systems/ai-neural-signal.png" alt="Neural Signal Detection" class="featured-system-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiment Logs Section -->
+    <section class="section" id="experiments">
+        <div class="container">
+            <h2 class="section-title">Experiment Logs & Research</h2>
+            <p class="section-subtitle">Documented trading experiments, backtest results, and quantitative research. Building proof through empirical testing.</p>
+            <div class="proof-grid">
+                <div class="experiment-card">
+                    <img src="assets/systems/quant-research-stats.png" alt="Volatility Research" class="experiment-image">
+                    <div class="experiment-info">
+                        <h3>Testing Volatility Clustering Models</h3>
+                        <p>Evaluating GARCH-family models and regime-switching approaches on synthetic index returns. 3,958 observations across 12 indices.</p>
+                        <a href="experiment-volatility-clustering.html" class="experiment-link">View Results →</a>
+                    </div>
+                </div>
+                <div class="experiment-card">
+                    <img src="assets/proof/backtest-1.png" alt="FVG Backtest" class="experiment-image">
+                    <div class="experiment-info">
+                        <h3>30-Day FVG Strategy Backtest</h3>
+                        <p>Walk-forward analysis of ICT Fair Value Gap strategy. Win rate: 67.3%, Profit Factor: 2.14, Max Drawdown: -12.8%.</p>
+                        <a href="experiment-fvg-backtest.html" class="experiment-link">View Analysis →</a>
+                    </div>
+                </div>
+                <div class="experiment-card">
+                    <img src="assets/proof/mt5-execution.png" alt="ML Filters" class="experiment-image">
+                    <div class="experiment-info">
+                        <h3>ML Filters on ICT Setups</h3>
+                        <p>Testing machine learning confidence filters on traditional ICT trading setups. Reduced false signals by 43% while maintaining edge.</p>
+                        <a href="experiment-ml-filters.html" class="experiment-link">View Findings →</a>
+                    </div>
+                </div>
+                <div class="experiment-card">
+                    <img src="assets/proof/api-logs.jpg" alt="SMT Divergence" class="experiment-image">
+                    <div class="experiment-info">
+                        <h3>SMT Divergence Win Rate Analysis</h3>
+                        <p>Analyzing win rates across different market regimes. 2,847 trades analyzed. Performance varies significantly by volatility regime.</p>
+                        <a href="experiment-smt-analysis.html" class="experiment-link">View Data →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- System Architecture Section -->
+    <section class="section" id="architecture" style="background: rgba(15, 23, 42, 0.3);">
+        <div class="container">
+            <h2 class="section-title">System Architecture & Infrastructure</h2>
+            <p class="section-subtitle">Complete trading infrastructure blueprint. From data ingestion to execution, every component is engineered for precision and reliability.</p>
+            
+            <div style="margin-bottom: 4rem;">
+                <img src="assets/systems/system-architecture-flow.png" alt="Black Ops Fintech Architecture" style="width: 100%; border-radius: 1rem; box-shadow: 0 20px 50px rgba(59, 130, 246, 0.3);">
+            </div>
+
             <div style="margin-bottom: 4rem;">
                 <h3 style="font-family: 'Syne', sans-serif; font-size: 1.8rem; margin-bottom: 2rem; color: var(--accent); text-align: center;">Trading Bot Systems</h3>
                 <div class="systems-grid">
@@ -665,6 +705,67 @@
         </div>
     </section>
 
+    <!-- Mission Control Dashboard -->
+    <section class="section" id="mission-control">
+        <div class="container">
+            <h2 class="section-title">Mission Control: Global Market Monitoring</h2>
+            <p class="section-subtitle">Real-time market intelligence and AI monitoring across global financial markets.</p>
+            <img src="assets/systems/mission-control-dashboard.png" alt="Mission Control Dashboard" style="width: 100%; border-radius: 1rem; box-shadow: 0 20px 50px rgba(59, 130, 246, 0.3); margin-bottom: 3rem;">
+        </div>
+    </section>
+
+    <!-- Proof Section -->
+    <section class="section" id="proof" style="background: rgba(15, 23, 42, 0.3);">
+        <div class="container">
+            <h2 class="section-title">Proof & Infrastructure</h2>
+            <p class="section-subtitle">Real trading systems, backtests, and system architecture. Building trust through transparency.</p>
+            <div class="proof-grid">
+                <div class="proof-card">
+                    <img src="assets/proof/leakey_labs_quant_terminal.png" alt="Leakey Labs Quant Terminal" class="proof-image">
+                    <div class="proof-info">
+                        <h3>Quant Terminal</h3>
+                        <p>Cinematic fintech control-room visual showcasing live trading data and AI monitoring.</p>
+                    </div>
+                </div>
+                <div class="proof-card">
+                    <img src="assets/proof/leakey_labs_architecture.png" alt="Leakey Labs Architecture" class="proof-image">
+                    <div class="proof-info">
+                        <h3>System Architecture</h3>
+                        <p>Technical flow diagram showing the integration from raw data APIs to AI intelligence layers.</p>
+                    </div>
+                </div>
+                <div class="proof-card">
+                    <img src="assets/proof/bot-terminal.png" alt="Bot Terminal" class="proof-image">
+                    <div class="proof-info">
+                        <h3>Python Trading Engine</h3>
+                        <p>Deep system logs from our Python-based execution engine showing millisecond decision-making.</p>
+                    </div>
+                </div>
+                <div class="proof-card">
+                    <img src="assets/proof/backtest-2.webp" alt="Backtesting" class="proof-image">
+                    <div class="proof-info">
+                        <h3>Backtest Results</h3>
+                        <p>Walk-forward analysis and Monte Carlo simulations validating strategy robustness across market regimes.</p>
+                    </div>
+                </div>
+                <div class="proof-card">
+                    <img src="assets/proof/global_market_monitoring.png" alt="Global Market Monitoring" class="proof-image">
+                    <div class="proof-info">
+                        <h3>Global Market Monitoring</h3>
+                        <p>Real-time market intelligence and analytics dashboard for global financial assets.</p>
+                    </div>
+                </div>
+                <div class="proof-card">
+                    <img src="assets/proof/synthetic_index_intelligence.png" alt="Synthetic Index Intelligence" class="proof-image">
+                    <div class="proof-info">
+                        <h3>Synthetic Intelligence</h3>
+                        <p>Advanced AI dashboard with neural network analysis for synthetic market patterns.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Stories Section -->
     <section class="section" id="stories" style="background: rgba(15, 23, 42, 0.3);">
         <div class="container">
@@ -713,7 +814,7 @@
                         <h3>Python Trading Bots</h3>
                     </div>
                     <div class="article-body">
-                        <p>Comprehensive guide to building automated trading systems using Python and popular APIs.</p>
+                        <p>Comprehensive guide to building automated trading systems using Python, APIs, and machine learning. From concept to deployment.</p>
                         <a href="python-trading-bots.html" class="article-link">Read Article →</a>
                     </div>
                 </div>
@@ -722,8 +823,35 @@
                         <h3>ICT Trading Basics</h3>
                     </div>
                     <div class="article-body">
-                        <p>Understanding Inner Circle Trading concepts and market structure analysis fundamentals.</p>
+                        <p>Understanding Inner Circle Trading (ICT) methodology, order blocks, fair value gaps, and how to integrate them into systematic trading.</p>
                         <a href="ict-trading-basics.html" class="article-link">Read Article →</a>
+                    </div>
+                </div>
+                <div class="article-card">
+                    <div class="article-header">
+                        <h3>SMT Divergence Strategy</h3>
+                    </div>
+                    <div class="article-body">
+                        <p>Deep dive into Smart Money Technique divergence detection. How to identify when large players are taking positions against retail flow.</p>
+                        <a href="smt-divergence.html" class="article-link">Read Article →</a>
+                    </div>
+                </div>
+                <div class="article-card">
+                    <div class="article-header">
+                        <h3>Fair Value Gap Strategy</h3>
+                    </div>
+                    <div class="article-body">
+                        <p>Mastering ICT Fair Value Gap (FVG) strategy. Identifying gaps, understanding market structure, and building systematic entry rules.</p>
+                        <a href="fvg-strategy.html" class="article-link">Read Article →</a>
+                    </div>
+                </div>
+                <div class="article-card">
+                    <div class="article-header">
+                        <h3>Risk Management Framework</h3>
+                    </div>
+                    <div class="article-body">
+                        <p>Building institutional-grade risk management systems. Position sizing, drawdown control, and capital preservation strategies.</p>
+                        <a href="risk-management.html" class="article-link">Read Article →</a>
                     </div>
                 </div>
                 <div class="article-card">
@@ -731,35 +859,8 @@
                         <h3>TradingView Indicators</h3>
                     </div>
                     <div class="article-body">
-                        <p>Advanced techniques for creating custom Pine Script indicators and automated strategies.</p>
+                        <p>Building custom Pine Script indicators for TradingView. Advanced technical analysis tools for professional trading systems.</p>
                         <a href="tradingview-indicator-guide.html" class="article-link">Read Article →</a>
-                    </div>
-                </div>
-                <div class="article-card">
-                    <div class="article-header">
-                        <h3>Risk Management</h3>
-                    </div>
-                    <div class="article-body">
-                        <p>Professional risk management strategies and capital preservation techniques for traders.</p>
-                        <a href="risk-management.html" class="article-link">Read Article →</a>
-                    </div>
-                </div>
-                <div class="article-card">
-                    <div class="article-header">
-                        <h3>FVG Trading Strategy</h3>
-                    </div>
-                    <div class="article-body">
-                        <p>Fair Value Gap analysis and advanced price action trading methodology.</p>
-                        <a href="fvg-strategy.html" class="article-link">Read Article →</a>
-                    </div>
-                </div>
-                <div class="article-card">
-                    <div class="article-header">
-                        <h3>SMT Divergence</h3>
-                    </div>
-                    <div class="article-body">
-                        <p>Smart Money Techniques and divergence patterns for professional trading analysis.</p>
-                        <a href="smt-divergence.html" class="article-link">Read Article →</a>
                     </div>
                 </div>
             </div>
@@ -769,36 +870,34 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="disclaimer">
-                <strong>⚠️ Trading Disclaimer:</strong> All trading systems, backtests, and strategies documented here are for educational purposes only. Past performance does not guarantee future results. Trading and investing involve substantial risk of loss. Always conduct your own research and consult with financial professionals before making investment decisions. Leakey Labs does not provide financial advice.
-            </div>
-
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>About Leakey Labs</h4>
-                    <p>Building algorithmic trading systems, probability models, and financial narratives. Documenting real market experiments through code, data, and storytelling.</p>
+                    <h4>Leakey Labs</h4>
+                    <p>Building elite trading systems and quantitative research infrastructure. Engineering > Gambling.</p>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
-                    <p><a href="#home">Home</a></p>
-                    <p><a href="#proof">Proof & Infrastructure</a></p>
-                    <p><a href="#systems">Trading Systems</a></p>
-                    <p><a href="#stories">Stories</a></p>
+                    <p><a href="#featured">Featured Systems</a></p>
+                    <p><a href="#experiments">Experiments</a></p>
+                    <p><a href="#systems">Systems</a></p>
                     <p><a href="#insights">Insights</a></p>
                 </div>
                 <div class="footer-section">
-                    <h4>Connect</h4>
-                    <p><a href="https://github.com/maitethialeakey-droid">GitHub</a></p>
-                    <p><a href="mailto:contact@leakeylabs.com">Email</a></p>
-                    <p><a href="https://twitter.com">Twitter/X</a></p>
+                    <h4>Resources</h4>
+                    <p><a href="privacy-policy.html">Privacy Policy</a></p>
+                    <p><a href="disclaimer.html">Disclaimer</a></p>
+                    <p><a href="https://github.com/maitethialeakey-droid/leakey-personal-brand">GitHub Repository</a></p>
                 </div>
             </div>
-
             <div class="footer-bottom">
-                <p>&copy; 2026 Leakey Labs. All rights reserved. | Algorithmic Trader | System Builder | Digital Story Developer</p>
+                <p>&copy; 2025 Leakey Labs. All rights reserved. | Trading systems engineer | Quantitative research | AI-powered market analysis</p>
             </div>
         </div>
     </footer>
+
+    <div class="disclaimer" style="margin-top: 2rem;">
+        <strong>Disclaimer:</strong> Trading and investing involve substantial risk of loss. Past performance does not guarantee future results. All trading systems and strategies are provided for educational purposes only. Always conduct your own research and consult with a financial advisor before making investment decisions.
+    </div>
 
 </body>
 </html>
