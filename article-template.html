@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ARTICLE_DESCRIPTION">
+    <meta name="keywords" content="ARTICLE_KEYWORDS">
+    <meta name="author" content="Maitethia Leakey">
+    <title>ARTICLE_TITLE | Leakey Labs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --secondary: #8b5cf6;
+            --bg-dark: #070b14;
+            --bg-card: rgba(15, 23, 42, 0.8);
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+            --accent: #60a5fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.8;
+        }
+
+        header {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--accent);
+        }
+
+        article {
+            padding: 4rem 0;
+        }
+
+        article h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #fff 0%, #60a5fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .article-meta {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        article h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.8rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        article h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--accent);
+        }
+
+        article p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        article ul, article ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        article li {
+            margin-bottom: 0.75rem;
+        }
+
+        article a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        article a:hover {
+            text-decoration: underline;
+        }
+
+        article code {
+            background: rgba(59, 130, 246, 0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 0.3rem;
+            font-family: 'Courier New', monospace;
+            color: #fbbf24;
+        }
+
+        article pre {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        article pre code {
+            background: none;
+            padding: 0;
+            color: #e2e8f0;
+        }
+
+        .highlight {
+            background: rgba(59, 130, 246, 0.1);
+            padding: 1.5rem;
+            border-left: 3px solid var(--primary);
+            border-radius: 0.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .highlight strong {
+            color: var(--accent);
+        }
+
+        footer {
+            background: #070b14;
+            padding: 3rem 0;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(148, 163, 184, 0.1);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .copyright {
+            color: #475569;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            article h1 { font-size: 1.8rem; }
+            article h2 { font-size: 1.4rem; }
+            .nav-links { gap: 1rem; font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">LEAKEY LABS</a>
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#systems">Systems</a></li>
+                    <li><a href="index.html#stories">Stories</a></li>
+                    <li><a href="index.html#insights">Insights</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <a href="index.html#insights" class="back-link">← Back to Insights</a>
+
+        <article>
+            <h1>ARTICLE_TITLE</h1>
+            <div class="article-meta">
+                By Maitethia Leakey | Leakey Labs | ARTICLE_DATE
+            </div>
+
+            <!-- ARTICLE CONTENT GOES HERE -->
+
+        </article>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <p style="color: var(--text-main); margin-bottom: 0.5rem;"><strong>Leakey Labs</strong></p>
+                    <p class="copyright">Algorithmic Trader | System Builder | Digital Story Developer</p>
+                </div>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#systems">Systems</a></li>
+                    <li><a href="index.html#stories">Stories</a></li>
+                    <li><a href="https://github.com/maitethialeakey-droid">GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
